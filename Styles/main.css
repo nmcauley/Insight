@@ -1,0 +1,56 @@
+/* MAIN PAGE */
+
+/* overall text color and font */
+
+body {
+    background: rgb(211,210,212);
+background:linear-gradient( rgba(19,119,250,1) 72%, rgba(19,119,250,1) 98%);
+/* background color courtesy of https://cssgradient.io/ */
+
+    color: whitesmoke;
+    font-family: Helvetiva Neue, Helvetica, Arial;
+}
+
+/* Main passage */
+section .main text, .main image{
+    display: inline-block;
+    padding: 40px;
+}
+
+button.main.button{
+    margin-left: 200px;
+}
+
+section.li.main{
+    position: fixed;
+    bottom: 200px;
+    top: 200px;
+
+}
+
+section h2.header{
+    position: fixed;
+    top: 200px;
+    font-size: xx-large;
+}
+
+section p.words{
+    position: fixed;
+    top: 260px;
+    font-size: larger;
+}
+
+section .main.image{
+    position: fixed;
+    left: 600px;
+    top: 200px;
+}
+
+section a.learnmore{
+    margin-left: 220px;
+    color: white;
+    border-radius: 15px;
+    border: 2px solid white;
+    padding: 8px;
+    text-decoration: none;
+}

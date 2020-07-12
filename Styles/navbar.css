@@ -1,0 +1,54 @@
+header{
+    background: rgb(228,228,228);
+    background: linear-gradient(90deg, rgba(228,228,228,1) 0%, rgba(19,119,250,1) 73%);
+    border-radius: 180px;
+    margin-top: 20px;
+    padding: 18px;
+    width: 1250px;
+    height: 100px;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+
+ }
+
+header .logo a{
+    background-image: url("../images/insightlogo.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    text-indent: -999999px;
+    display: inline-block;
+    margin-right: 20px;
+    height: 100px;
+    position: relative;
+    top: -40px;
+    width: 100px;
+}
+
+/* navigation buttons */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.navigation{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+li{
+    display: inline-block;
+    margin: 35px;
+}
+
+header .login a{
+    position: relative;
+    margin-left: 350px;
+    border-radius: 15px;
+    border: 2px solid white;
+    padding: 8px;
+    text-decoration: none;
+}

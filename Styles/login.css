@@ -1,0 +1,58 @@
+/* login page */
+/* login animation and format courtesy of https://www.youtube.com/watch?v=CuABw0IIzR8*/
+
+
+/* overall text color and font */
+body {
+    background: rgb(211,210,212);
+    background:linear-gradient( rgba(19,119,250,1) 72%, rgba(19,119,250,1) 98%);
+    /* background color courtesy of https://cssgradient.io/ */
+    
+        color: black;
+        font-family: Helvetiva Neue, Helvetica, Arial;
+    }
+
+.image, .box{
+    display: inline-block;
+}
+
+.box{
+    background-color: white;
+    height: 60vh;
+    border-radius: 10px;
+    width: 400px;
+    padding:60px 50px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+h3{
+    font-size: 40px;
+    margin-bottom: 50px ;
+}
+
+.input, form .submit{
+    margin: 60px 0;
+    height: 50px;
+}
+
+.input label{
+    margin-right: 300px;
+    height: 20px;
+}
+
+.input label.password{
+    margin-right: 330px;
+}
+
+.input input{
+    height: 100%;
+    width: 100%;
+    padding-left: 15px;
+    border: 1px solid silver;
+    padding-left: 15px;
+    font-size: 18px;
+    outline: none;
+
+}
