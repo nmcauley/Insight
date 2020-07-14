@@ -1,0 +1,72 @@
+/* home page for user after they login 
+*main page to use the tool* */
+
+/* tab format courtesy of  w3schools.com */
+
+body {
+    background: white;
+    /* background color courtesy of https://cssgradient.io/ */  
+        color: rgb(16, 86, 177);
+        font-family: Helvetiva Neue, Helvetica, Arial;
+    }
+
+
+section .text{
+    margin-top: 120px;
+    justify-content: center;
+    text-align: center;
+}
+
+section .container{
+    padding: 40px 75px;
+}
+
+
+* {box-sizing: border-box;}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 10px;
+  font-size: 18px;
+  width: 25%;
+  margin-top: 0px;
+}
+
+.tablink.product{
+    background-color: silver;
+}
+
+.tablink.price{
+    background-color: rgb(163, 162, 162);
+}
+
+.tablink.cost{
+    background-color: rgb(146, 146, 146);
+}
+
+.tablink.profit{
+    background-color: rgb(129, 129, 129);
+}
+
+
+.tablink:hover{
+  background-color: rgb(141, 141, 141);
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding-bottom: 50px;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}

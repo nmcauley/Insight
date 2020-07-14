@@ -1,18 +1,18 @@
-header{
-    background: rgb(228,228,228);
-    background: linear-gradient(90deg, rgba(228,228,228,1) 0%, rgba(19,119,250,1) 73%);
-    border-radius: 180px;
-    margin-top: 20px;
-    padding: 18px;
-    width: 1250px;
-    height: 100px;
-}
-
 header a{
-    color: white;
+    color: rgba(19,119,250,1);
     text-decoration: none;
-
+    font-size: 23px;
  }
+
+/*  hover effects for the navigation links*/
+.navigation li:not(.logo, .username){
+    transition: .5s ease-in-out;
+ }
+
+.navigation li:hover:not(.logo, .username), .navigation li:active:not(.logo, .username){
+        transform: scale(1.2);
+ }
+/*  */
 
 header .logo a{
     background-image: url("../images/insightlogo.png");
@@ -23,7 +23,7 @@ header .logo a{
     margin-right: 20px;
     height: 100px;
     position: relative;
-    top: -40px;
+    top: -20px;
     width: 100px;
 }
 
@@ -31,24 +31,38 @@ header .logo a{
 ul {
     margin: 0;
     padding: 0;
-    list-style-type: none;
 }
 
+
 ul.navigation{
-    margin-left: 20px;
-    margin-top: 20px;
+    /* border: 14px solid rgba(19,119,250,1); */
+    border-radius: 180px;
+    margin-top: 24px;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    list-style: none;
 }
 
 li{
     display: inline-block;
-    margin: 35px;
+    margin: 30px;
 }
 
-header .login a{
-    position: relative;
-    margin-left: 350px;
-    border-radius: 15px;
-    border: 2px solid white;
+/* login button on far right */
+.username:hover{
+    opacity: 1;
+
+}
+
+.username{
+    position: fixed;
+    border-radius: 20px;
+    margin-left: 300px;
+    margin-bottom: 10px;
+    border: 2px solid rgba(19,119,250,1);
     padding: 8px;
     text-decoration: none;
+    opacity: 0.9;
+    transition: 0.3s;
 }

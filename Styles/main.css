@@ -3,11 +3,10 @@
 /* overall text color and font */
 
 body {
-    background: rgb(211,210,212);
-background:linear-gradient( rgba(19,119,250,1) 72%, rgba(19,119,250,1) 98%);
-/* background color courtesy of https://cssgradient.io/ */
+    background: white;
+/* background:linear-gradient( rgba(19,119,250,1) 72%, rgba(19,119,250,1) 98%); */
 
-    color: whitesmoke;
+/* background color courtesy of https://cssgradient.io/ */
     font-family: Helvetiva Neue, Helvetica, Arial;
 }
 
@@ -32,25 +31,37 @@ section h2.header{
     position: fixed;
     top: 200px;
     font-size: xx-large;
+    color: black;
 }
 
 section p.words{
     position: fixed;
     top: 260px;
     font-size: larger;
+    color: silver;
+}
+
+strong{
+    color: rgba(19,119,250,1);
 }
 
 section .main.image{
     position: fixed;
-    left: 600px;
-    top: 200px;
+    left: 650px;
+    top: 210px;
 }
 
-section a.learnmore{
+.learnmore{
     margin-left: 220px;
-    color: white;
-    border-radius: 15px;
-    border: 2px solid white;
+    color: rgba(19,119,250,1);;
+    border-radius: 20px;
+    border: 2px solid rgba(19,119,250,1);
     padding: 8px;
     text-decoration: none;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.learnmore:hover{ 
+    opacity: 1;
 }

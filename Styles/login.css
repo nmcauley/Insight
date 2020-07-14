@@ -1,58 +1,182 @@
 /* login page */
-/* login animation and format courtesy of https://www.youtube.com/watch?v=CuABw0IIzR8*/
+/* login animation and format courtesy of:
+https://www.youtube.com/watch?v=CuABw0IIzR8 ,
+w3schools.com */
 
 
 /* overall text color and font */
+
 body {
-    background: rgb(211,210,212);
-    background:linear-gradient( rgba(19,119,250,1) 72%, rgba(19,119,250,1) 98%);
-    /* background color courtesy of https://cssgradient.io/ */
-    
-        color: black;
+    background: white;
+    /* background color courtesy of https://cssgradient.io/ */  
+        color: white;
         font-family: Helvetiva Neue, Helvetica, Arial;
+        position: relative;
     }
 
 .image, .box{
     display: inline-block;
+    margin-right: 50;
 }
 
 .box{
-    background-color: white;
-    height: 60vh;
-    border-radius: 10px;
+    position: fixed;
+    background-color:rgba(19,119,250,1);
+    top: 0px;
+    right: 0px;
+    height: 100%;
     width: 400px;
-    padding:60px 50px;
+    padding: 60px 100px;
     align-items: center;
     text-align: center;
     justify-content: center;
-
 }
+
+/* elements for signin box */
+.contents{
+    margin-top: 120px;
+}
+
 h3{
-    font-size: 40px;
-    margin-bottom: 50px ;
+    font-size: 45px;
+    margin-bottom: 40px ;
 }
 
-.input, form .submit{
+/* .container controls the contents of the signup box*/
+.container .input{
     margin: 60px 0;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+
+.contents .input, .login, .contents .button{
+    margin: 45px 0;
     height: 50px;
 }
 
-.input label{
-    margin-right: 300px;
+.input label, .modal label{
     height: 20px;
+    font-size: 17px;
+}
+
+.input label{
+    margin-right: 290px;
 }
 
 .input label.password{
     margin-right: 330px;
 }
 
-.input input{
+.input input, .modal input{
     height: 100%;
     width: 100%;
     padding-left: 15px;
     border: 1px solid silver;
+    border-radius: 15px;
     padding-left: 15px;
     font-size: 18px;
     outline: none;
+    transition: .5s;
+}
 
+/* effects for when selecting the input fields */
+input:focus{
+    border: 3px solid rgba(228,228,228,1);
+}
+
+input:hover{
+    background-color: rgb(240, 239, 239);
+}
+
+input{
+    transition: ease-in-out .4s;
+}
+
+.submit:hover button{
+    background-color: rgba(228,228,228,1);
+}
+
+/* for signup and login buttons */
+.submit button{
+    width: 70%;
+    height: 100%;
+    background:white;
+    border-radius: 20px;
+    color:rgba(19,119,250,1);
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: ease-in-out 0.2s;
+}
+
+
+/* button at bottom of signin page */
+.register-button{
+    font-size: 15px;
+    margin-top: 130px;
+    color: rgba(19,119,250,1);
+    text-decoration: none;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+    transition: ease-in-out .2s;
+}
+
+.register-button:hover{
+    background-color: rgba(228,228,228,1);
+}
+
+
+.signupbtn{
+    width: 70%;
+    padding: 5px;
+    margin-left: 70px;
+
+}
+
+                                /* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: white;
+}
+                                    
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+float: left;
+width: 50%;
+}
+/* The popup (background) */
+    .box .modal {
+    display: none; /* Hidden by default */
+}
+                                    
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+                                    
+.close:hover, .close:focus {
+    color: silver;
+    cursor: pointer;
+}
+                                    
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+                                    
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+    width: 100%;
+    }
 }
