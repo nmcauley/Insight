@@ -10,7 +10,7 @@ header a{
  }
 
 .navigation li:hover:not(.logo, .username), .navigation li:active:not(.logo, .username){
-        transform: scale(1.2);
+        transform: scale(1.1);
  }
 /*  */
 
@@ -38,7 +38,6 @@ ul.navigation{
     /* border: 14px solid rgba(19,119,250,1); */
     border-radius: 180px;
     margin-top: 24px;
-    align-items: center;
     width: 100%;
     height: 90px;
     list-style: none;
@@ -50,17 +49,17 @@ li{
 }
 
 /* login button on far right */
-.username:hover{
+.username a:hover{
     opacity: 1;
 
 }
 
-.username{
+.username a{
     position: fixed;
+    color:rgb(16, 86, 177);
     border-radius: 20px;
-    margin-left: 300px;
-    margin-bottom: 10px;
-    border: 2px solid rgba(19,119,250,1);
+    right: 5%;
+    top: 50px;
     padding: 8px;
     text-decoration: none;
     opacity: 0.9;

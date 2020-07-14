@@ -4,7 +4,10 @@
 /* tab format courtesy of  w3schools.com */
 
 body {
-    background: white;
+    background: rgb(88,160,255);
+    background: linear-gradient(216deg, rgba(88,160,255,1) 0%, rgba(255,255,255,1) 59%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     /* background color courtesy of https://cssgradient.io/ */  
         color: rgb(16, 86, 177);
         font-family: Helvetiva Neue, Helvetica, Arial;
@@ -12,13 +15,13 @@ body {
 
 
 section .text{
-    margin-top: 120px;
+    margin-top: 50px;
     justify-content: center;
     text-align: center;
 }
 
 section .container{
-    padding: 40px 75px;
+    padding: 20px 120px;
 }
 
 
@@ -33,7 +36,8 @@ section .container{
   outline: none;
   cursor: pointer;
   padding: 15px 10px;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
   width: 25%;
   margin-top: 0px;
 }
@@ -43,15 +47,15 @@ section .container{
 }
 
 .tablink.price{
-    background-color: rgb(163, 162, 162);
+    background-color: rgb(182, 180, 180);
 }
 
 .tablink.cost{
-    background-color: rgb(146, 146, 146);
+    background-color: rgb(163, 163, 163);
 }
 
 .tablink.profit{
-    background-color: rgb(129, 129, 129);
+    background-color: rgb(150, 150, 150);
 }
 
 
@@ -63,10 +67,10 @@ section .container{
 .tabcontent {
   color: white;
   display: none;
-  padding-bottom: 50px;
+  padding-bottom: 35%;
 }
 
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
+#Product {background-color: silver;}
+#Price {background-color: rgb(182, 180, 180);}
+#Cost {background-color: rgb(163, 163, 163);}
+#Profit {background-color: rgb(150, 150, 150);}

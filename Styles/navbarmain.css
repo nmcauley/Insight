@@ -1,0 +1,74 @@
+/* nav button text */
+header a:not(.logo){
+    color: rgba(19,119,250,1);
+    text-decoration: none;
+    font-size: 23px;
+ }
+
+/*  hover effects for the navigation links*/
+.navigation li:not(.logo, .login){
+    transition: .5s ease-in-out;
+ }
+
+.navigation li:hover:not(.logo, .login), .navigation li:active:not(.logo, .login){
+        transform: scale(1.1);
+ }
+
+
+header .logo a{
+    background-image: url("../images/insightlogo.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    text-indent: -999999px;
+    display: inline-block;
+    margin-right: 20px;
+    height: 200px;
+    position: relative;
+    width: 100px;
+    top: -20px;
+}
+
+/* navigation buttons */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* navigation bar */
+ul.navigation{
+    margin-top: 20px;
+    /* background: linear-gradient(90deg, rgba(228,228,228,1) 0%, rgba(19,119,250,1) 73%); */
+    border-radius: 180px;
+    /* margin-top: 20px; */
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    list-style: none;
+    /* text shadow courtesy of massmediums 
+    https://www.massmediums.com/blog/134-create-great-looking-pure-css-text-shadows.html */
+}
+
+li{
+    display: inline-block;
+    margin: 30px;
+}
+
+/* login button on far right */
+header .login a:hover{
+    background:rgb(243, 243, 243);
+
+}
+
+header .login a{
+    position: fixed;
+    right: 5%;
+    background: rgb(235, 234, 234);
+    border-radius: 20px;
+    color:rgba(19,119,250,1);
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid rgba(19,119,250,1);
+    transition: ease-in-out 0.2s;
+    padding: 8px 20px;
+    transition: 0.1s;
+}

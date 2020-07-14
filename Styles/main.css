@@ -3,11 +3,15 @@
 /* overall text color and font */
 
 body {
-    background: white;
-/* background:linear-gradient( rgba(19,119,250,1) 72%, rgba(19,119,250,1) 98%); */
+    background: rgb(88,160,255);
+    background: linear-gradient(216deg, rgba(88,160,255,1) 0%, rgba(255,255,255,1) 59%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 /* background color courtesy of https://cssgradient.io/ */
-    font-family: Helvetiva Neue, Helvetica, Arial;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Main passage */
@@ -30,15 +34,17 @@ section.li.main{
 section h2.header{
     position: fixed;
     top: 200px;
-    font-size: xx-large;
+    font-size: 35px;
     color: black;
+    margin-left: 25px;
 }
 
 section p.words{
     position: fixed;
-    top: 260px;
-    font-size: larger;
-    color: silver;
+    top: 280px;
+    font-size: 21px;
+    color: rgb(139, 139, 139);
+    margin-left: 25px;
 }
 
 strong{
@@ -47,21 +53,21 @@ strong{
 
 section .main.image{
     position: fixed;
-    left: 650px;
-    top: 210px;
+    left: 640px;
+    top: 260px;
 }
 
 .learnmore{
-    margin-left: 220px;
+    margin-left: 240px;
+    background-color: white;
     color: rgba(19,119,250,1);;
     border-radius: 20px;
     border: 2px solid rgba(19,119,250,1);
     padding: 8px;
     text-decoration: none;
-    opacity: 0.9;
-    transition: 0.3s;
+    transition: 0.1s ease-in-out;
 }
 
 .learnmore:hover{ 
-    opacity: 1;
+    background:rgb(243, 243, 243);
 }
