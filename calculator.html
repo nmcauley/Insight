@@ -41,21 +41,78 @@
                         <div id="Product" class="tabcontent">
                           <h3>Product details</h3>
                           <p>What are you looking for?</p>
-                        </div>
+                            <form> 
+                              <table width="500" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td><label>Material Cost</label></td> 
+                                    <td><input type="number" name="materialcost" id="materialcost"></td>
+                                  </tr><tr>
+                                    <td><label>Units Sold Last Month</label></td>
+                                    <td><input type="number" name="unitssoldlastmonth" id="unitssoldlastmonth"></td>
+                                  </tr><tr>
+                                    <td><label>Units Sold Last Month Last Year</label></td>
+                                    <td><input type="number" name="unitssoldlastmonthlastyear" id="unitssoldlastmonthlastyear"></td>
+                                  </tr><tr>
+                                    <td><label>Units Sold Next Month Last Year</label></td>
+                                    <td><input type="number" name="unitssoldnextmonthlastyear" id="unitssoldnextmonthlastyear"></td>
+                                  </tr><tr>
+                                    <td><label>% Change in Sales YTY</label></td>
+                                    <td><output name="% change in year" for="unitssoldlastmonth unitssoldlastmonthlastyear"></output></td>
+                                   </tr>
+                                </tbody>
+                             </table>
+                            </form>
+                          </div>
 
                         <div id="Price" class="tabcontent">
                           <h3>Price details</h3>
-                          <p>What's your asking price?</p> 
+                          <p>What's your asking price?</p>
+                            <form>
+                              <table width="500" border="0">
+                                <trbody>
+                                  <tr>
+                                    <td><label>Fixed Monthly Costs</label></td>
+                                    <td><input type="number" name="fixedcosts" id="fixedcosts"></td>
+                                  </tr><tr>
+                                    <td><label>Monthly Labor Costs</label></td>
+                                    <td><input type="number" name="monthlylabor" id="monthlylabor"></td>
+                                  </tr><tr>
+                                    <td><label>Monthly Covid Costs</label></td>
+                                    <td><input type="number" name="mothlycovid" id="monthlycovid"></td>
+                                  </tr>
+                                </trbody>
+                              </table>
+                            </form>
                         </div>
 
                         <div id="Cost" class="tabcontent">
                           <h3>Cost Details</h3>
                           <p>How much are you spending?</p>
+                            <form>
+                              <table width="500" border="0">
+                                <trbody>
+                                  <tr>
+                                    <td><label>Total Cost Per Unit</label></td>
+                                    <td><output name="totalcostperunit" for="fixedcosts monthlylabor monthlycovid"></output></td>
+                                  </tr>
+                                </trbody>
+                              </table>
+                            </form>
                         </div>
 
                         <div id="Profit" class="tabcontent">
                           <h3>Profit</h3>
                           <p>How much are you wanting to make?</p>
+                            <form>
+                              <table width="500" border="0">
+                                <trbody>
+                                  <tr>
+                                    <td><label><input type="submit" name="submit" id="submit" value="Submit"></label></td>
+                                  </tr>
+                                </trbody>
+                              </table>
+                            </form>
                         </div>
 
                         <script>
