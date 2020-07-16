@@ -8,73 +8,99 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Insight® : Business Done Right</title>
     </head>
-    <style>
-        body {
-            color: black;
-            font-family: Helvetiva Neue, Helvetica, Arial;
-            margin: 0;
-            padding: 0;
-        }
-
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-
-        li{
-            display: inline-block;
-            margin: 20px;
-
-        }
-
-        section {
-            margin: 30px, 80px, 120px, 30px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/navbar.css">
 
     <body>
         <header>
             
             <nav>
-                <ul>
-                    <li> <a href="index.html"><img width="50" src="not-found.png"/> </a> </li>
-                    <li> <a href="index.html"> <button>Home</button> </a> </li>
-                    <li> <a href="about.html"> <button>About</button> </a> </li>
-                    <li> <a href="how_to_use.html"> <button>How To Use</button> </a> </li>
-                    <li> <a href="contact_us.html"> <button>Contact Us</button> </a> </li>
-                    <li> <a href="login.html"> <button>Log In</button> </a> </li>
+                <ul class="navigation">
+                    <li class="logo"> <a href="index.html"> Insight Logo</a> </li>
+                    <li> <a href="index.html"> <b>Home</b> </a> </li>
+                    <li> <a href="how_to_use.html"> <b>How To Use</b> </a> </li>
+                    <li> <a href="contact_us.html"> <b style="text-decoration: underline;"> Contact Us</b> </a> </li>
                 </ul>
             </nav>
 
         </header>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            /* Style inputs */
+            input[type=text], select, textarea {
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              margin-top: 6px;
+              margin-bottom: 16px;
+              resize: vertical;
+            }
+            
+            input[type=submit] {
+              background-color: rgba(19,119,250,1);
+              color: white;
+              padding: 12px 20px;
+              border-radius: 20px;
+              border: none;
+              cursor: pointer;
+            }
+            
+            input[type=submit]:hover {
+              background-color: rgb(18, 114, 240);
+            }
+            
+            /* Style the container/contact section */
+            .container {
+              border-radius: 5px;
+              background-color: #d4d4d4;
+              padding: 5px;
+              margin: 40px 100px;
+              align-items: center;
+            }
+            
+            /* Create two columns that float next to eachother */
+            .column {
+              width: 60%;
+              margin-top: 6px;
+              padding: 45px;
+            }
+            
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+              .column, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+              }
+            }
 
-        <section>
-
-            <div>
-                <h4>Contact: </h2>
-                <p>
-                The outbreak of the coronavirus pandemic has left businesses hurting or<br>
-                at risk of closure due to COVID-induced revenue loss. Indianapolis has a remarkable <br>
-                restaurant scene as well as tons of local stores serving the community. <br>
-                INSIGHT is a solution aimed at helping these small businesses survive and adapt <br>
-                during these unprecedented times by providing resources to help price products <br>
-                and services to in order to mitigate losses.
-               </p>
+            </style>
+            <div class="container">
+              <div style="text-align:center">
+                <p style="font-size: 30px;">Let us know your concerns and we'll get back to you.</p>
+              </div>
+              <div class="row">
+                <div class="column">
+                  <form>
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Email" required>
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Enter text here" style="height:170px"></textarea>
+                    <input type="submit" value="Submit">
+                  </form>
+                </div>
+              </div>
             </div>
-
-            <div>
-                <img width= "450" src="not-found.png">
-            </div>
-
-        </section>
-
-
-        <footer>
-            <button>Learn More</button>
-        </footer>
-        
-
     </body>
 </html>

@@ -6,11 +6,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Insight® : Business Done Right</title>
+        <title>Insight® : Login</title>
     </head>
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="">
 
     <body>
         <header>
@@ -49,14 +48,15 @@
 
                                 <div class="submit">
                                     <div class="login">
-                                        <button>Login</button>
+                                        <!-- for sake of demo will redirect to the user home page (not calculator) -->
+                                        <button><a href="calculator.html" style="text-decoration: none; color: rgba(19,119,250,1);">Login</a></button>
                                     </div>  
                                 </div>
 
-                                <style>
+                                <div class="psword-reset">
+                                    <a href=""> Forgot password?</a> 
+                                </div>
 
-                                    </style>
-                                    
                                      New to Insight? <button class="register-button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Create Your Account</button>
                                     
                                     <div id="id01" class="box modal">
@@ -88,8 +88,7 @@
                                                 </div>
 
                                                 <div class="input">
-                                                    <br>
-                                                    <p>By creating an account you agree to our <br> <a href="#" style="color:silver">Terms & Privacy</a>.</p>
+                                                    <p>By creating an account you agree to our <br> <a class="terms" href="#" style="color:silver">Terms & Privacy</a>.</p>
                                                 </div>
 
                                                 <div class="submit">

@@ -1,0 +1,87 @@
+<!--
+    Home page
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insight® : Business Done Right</title>
+    </head>
+
+    <link rel="stylesheet" href="styles/calculator.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+
+    <body>
+        <header>  
+            <nav>
+                <ul class="navigation">
+                    <li class="logo"> <a href="index.html"> Insight Logo</a> </li>
+                    <li> <a href="index.html"> <b>Home</b> </a> </li>
+                    <li> <a href="how_to_use.html"> <b>How To Use</b> </a> </li>
+                    <li> <a href="contact_us.html"> <b>Contact Us</b> </a> </li>
+                    <li class="username"> <a href=""> <b>Username</b> </a> </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section>
+            <div class="page">
+                <div class="text">
+                    <h2><b>Price Setting Calculator - INSIGHT®</b></h2>
+                        <p>www.insight.com makes price setting simple for small businesses</p>
+                </div>
+                    <div class="container">
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <button class="tablink product" onclick="openPage('Product', this, 'silver')"id="defaultOpen">Product</button>
+                        <button class="tablink price" onclick="openPage('Price', this, 'rgb(182, 180, 180)')">Price</button>
+                        <button class="tablink cost" onclick="openPage('Cost', this, 'rgb(163, 163, 163)')">Cost</button>
+                        <button class="tablink profit" onclick="openPage('Profit', this, 'rgb(150, 150, 150)')">Profit</button>
+
+                        <div id="Product" class="tabcontent">
+                          <h3>Product details</h3>
+                          <p>What are you looking for?</p>
+                        </div>
+
+                        <div id="Price" class="tabcontent">
+                          <h3>Price details</h3>
+                          <p>What's your asking price?</p> 
+                        </div>
+
+                        <div id="Cost" class="tabcontent">
+                          <h3>Cost Details</h3>
+                          <p>How much are you spending?</p>
+                        </div>
+
+                        <div id="Profit" class="tabcontent">
+                          <h3>Profit</h3>
+                          <p>How much are you wanting to make?</p>
+                        </div>
+
+                        <script>
+                        function openPage(pageName,elmnt,color) {
+                          var i, tabcontent, tablinks;
+                          tabcontent = document.getElementsByClassName("tabcontent");
+                          for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                          }
+                          tablinks = document.getElementsByClassName("tablink");
+                          for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].style.backgroundColor = "";
+                          }
+                          document.getElementById(pageName).style.display = "block";
+                          elmnt.style.backgroundColor = color;
+                        }
+
+                        // Get the element with id="defaultOpen" and click on it
+                        document.getElementById("defaultOpen").click();
+                        </script>
+                                                                               
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </body>
+</html>
