@@ -51,11 +51,11 @@ h3{
 
 
 .contents .input, .login, .contents .button{
-    margin: 45px 0;
+    margin: 35px 0;
     height: 50px;
 }
 
-.input label, .modal label{
+/* .input label, .modal label{
     height: 20px;
     font-size: 17px;
 }
@@ -66,7 +66,7 @@ h3{
 
 .input label.password{
     margin-right: 330px;
-}
+} */
 
 .input input, .modal input{
     height: 100%;
@@ -85,31 +85,34 @@ input:focus{
     border: 3px solid rgba(228,228,228,1);
 }
 
-input:hover{
-    background-color: rgb(240, 239, 239);
+input:hover, .submit button:hover, .register-button:hover{
+    background-color: rgb(230, 227, 227);
 }
 
 input{
     transition: ease-in-out .4s;
 }
 
-.submit:hover button{
-    background-color: rgba(228,228,228,1);
-}
-
 /* for signup and login buttons */
 .submit button{
-    width: 70%;
-    height: 100%;
+    width: 50%;
+    height: 90%;
     background:white;
     border-radius: 20px;
     color:rgba(19,119,250,1);
     font-size: 20px;
     cursor: pointer;
-    border: 1px solid white;
+    border: none;
     transition: ease-in-out 0.2s;
 }
 
+.psword-reset a{
+    color: white;
+}
+
+.psword-reset a:hover{
+    color: rgb(230, 227, 227);
+}
 
 /* button at bottom of signin page */
 .register-button{
@@ -117,26 +120,22 @@ input{
     margin-top: 130px;
     color: rgba(19,119,250,1);
     text-decoration: none;
-    border: 1px solid white;
+    border: none;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 2px;
     transition: ease-in-out .2s;
 }
 
-.register-button:hover{
-    background-color: rgba(228,228,228,1);
-}
-
 
 .signupbtn{
-    width: 70%;
+    width: 50%;
     padding: 5px;
-    margin-left: 70px;
+    margin-left: 100px;
 
 }
 
-                                /* Extra styles for the cancel button */
+/* styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
     background-color: white;
@@ -148,7 +147,7 @@ float: left;
 width: 50%;
 }
 /* The popup (background) */
-    .box .modal {
+.box .modal {
     display: none; /* Hidden by default */
 }
                                     

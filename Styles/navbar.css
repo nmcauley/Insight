@@ -48,20 +48,20 @@ li{
     margin: 30px;
 }
 
-/* login button on far right */
 .username a:hover{
-    opacity: 1;
+    background:rgb(18, 108, 224);
 
 }
 
 .username a{
-    position: fixed;
-    color:rgb(16, 86, 177);
-    border-radius: 20px;
+    position: absolute;
     right: 5%;
-    top: 50px;
-    padding: 8px;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: 0.3s;
+    border-radius: 20px;
+    color:white;
+    background-color: rgba(19,119,250,1);
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid rgb(214, 212, 212);
+    transition: ease-in-out 0.3s;
+    padding: 8px 20px;
 }

@@ -55,20 +55,19 @@ li{
 
 /* login button on far right */
 header .login a:hover{
-    background:rgb(243, 243, 243);
+    background:rgb(18, 108, 224);
 
 }
 
 header .login a{
     position: fixed;
     right: 5%;
-    background: rgb(235, 234, 234);
     border-radius: 20px;
-    color:rgba(19,119,250,1);
+    color:white;
+    background-color: rgba(19,119,250,1);
     font-size: 20px;
     cursor: pointer;
-    border: 2px solid rgba(19,119,250,1);
-    transition: ease-in-out 0.2s;
+    border: 1px solid rgb(214, 212, 212);
+    transition: ease-in-out 0.3s;
     padding: 8px 20px;
-    transition: 0.1s;
 }

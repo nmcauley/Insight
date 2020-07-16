@@ -31,20 +31,20 @@ section.li.main{
 
 }
 
-section h2.header{
+section h1.header{
     position: fixed;
     top: 200px;
-    font-size: 35px;
+    font-size: 42px;
     color: black;
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 section p.words{
     position: fixed;
     top: 280px;
     font-size: 21px;
-    color: rgb(139, 139, 139);
-    margin-left: 25px;
+    color: rgb(117, 117, 117);
+    margin-left: 20px;
 }
 
 strong{
@@ -53,21 +53,23 @@ strong{
 
 section .main.image{
     position: fixed;
-    left: 640px;
+    left: 660px;
     top: 260px;
 }
 
 .learnmore{
-    margin-left: 240px;
-    background-color: white;
-    color: rgba(19,119,250,1);;
+    margin-left: 300px;
+    background-color: rgba(19,119,250,1);
+    color: white;
     border-radius: 20px;
-    border: 2px solid rgba(19,119,250,1);
+    border: 1px solid rgb(214, 212, 212);
     padding: 8px;
     text-decoration: none;
-    transition: 0.1s ease-in-out;
+    transition: 0.3s ease-in-out;
+    opacity: .8;
 }
 
 .learnmore:hover{ 
-    background:rgb(243, 243, 243);
+    background:rgb(23, 111, 226);
+    opacity: .9;
 }
