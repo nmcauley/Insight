@@ -1,11 +1,11 @@
 /* contact page for the user */
 body {
     /* background:  rgba(255,255,255,1); */
-    background: rgb(88,160,255);
-    background: linear-gradient(216deg, rgba(88,160,255,1) 0%, rgba(255,255,255,1) 59%);
+    background: white;
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* background color courtesy of https://cssgradient.io/ */  
-        color: rgb(16, 86, 177);
+        color: white;
         font-family: Helvetiva Neue, Helvetica, Arial;
     }
+
