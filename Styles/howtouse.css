@@ -1,0 +1,22 @@
+body {
+    color: black;
+    font-family: Helvetiva Neue, Helvetica, Arial;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+
+}
+
+section {
+    margin: 30px, 80px, 120px, 30px;
+}

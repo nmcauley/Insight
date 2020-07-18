@@ -24,6 +24,19 @@ button.main.button{
     margin-left: 200px;
 }
 
+.login{
+    margin-left: 300px;
+    background-color: rgba(19,119,250,1);
+    color: white;
+    border-radius: 20px;
+    border: 1px solid rgb(214, 212, 212);
+    padding: 8px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    opacity: .8;
+}
+
+
 section.li.main{
     position: fixed;
     bottom: 200px;
