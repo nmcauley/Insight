@@ -8,43 +8,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Insight® : Business Done Right</title>
     </head>
-    <style>
-        body {
-            color: black;
-            font-family: Helvetiva Neue, Helvetica, Arial;
-            margin: 0;
-            padding: 0;
-        }
 
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-
-        li{
-            display: inline-block;
-            margin: 20px;
-
-        }
-
-        section {
-            margin: 30px, 80px, 120px, 30px;
-        }
-
-    </style>
+        <link rel="stylesheet" href="styles/navbar.css">
+        <link rel="stylesheet" href="styles/about.css">
 
     <body>
-        <header>
-            
+        <header>  
             <nav>
-                <ul>
-                    <li> <a href="index.html"><img width="50" src="not-found.png"/> </a> </li>
-                    <li> <a href="index.html"> <button>Home</button> </a> </li>
-                    <li> <a href="about.html"> <button>About</button> </a> </li>
-                    <li> <a href="how_to_use.html"> <button>How To Use</button> </a> </li>
-                    <li> <a href="contact_us.html"> <button>Contact Us</button> </a> </li>
-                    <li> <a href="login.html"> <button>Log In</button> </a> </li>
+                <ul class="navigation">
+                    <li class="logo"> <a href="index.html"> Insight Logo</a> </li>
+                    <li> <a href="index.html"> <b style="text-decoration: underline;">Home</b> </a> </li>
+                    <li> <a href="about.html"> <b>About</b> </a> </li>
+                    <li> <a href="how_to_use.html"> <b>How To Use</b> </a> </li>
+                    <li> 
+                        <a id="contact" href="contact_us.html"> <b>Contact Us</b> </a>
+                     </li>
+                     <li class="login"> <a href="login.html"> Log In </a> </li>
                 </ul>
             </nav>
 
@@ -52,29 +31,26 @@
 
         <section>
 
-            <div>
-                <h4>About Us... </h2>
-                <p>
-                The outbreak of the coronavirus pandemic has left businesses hurting or<br>
-                at risk of closure due to COVID-induced revenue loss. Indianapolis has a remarkable <br>
-                restaurant scene as well as tons of local stores serving the community. <br>
-                INSIGHT is a solution aimed at helping these small businesses survive and adapt <br>
-                during these unprecedented times by providing resources to help price products <br>
-                and services to in order to mitigate losses.
-               </p>
-            </div>
+                <ul>
+                    <li class="main text">
+                        <h2 class="header">About Us... </h2>
 
-            <div>
-                <img width= "450" src="not-found.png">
-            </div>
+                            <p class="words">
+                            The outbreak of the coronavirus pandemic has left businesses hurting or<br>
+                            at risk of closure due to COVID-induced revenue loss. Indianapolis has a <br>
+                            remarkable restaurant scene as well as tons of local stores serving the <br>
+                            community. INSIGHT is a solution aimed at helping these small businesses <br> 
+                            survive and adapt during these unprecedented times by providing resources to <br>
+                            help price products and services to in order to mitigate losses. <br>
+                            <a class="learnmore" href="index.html"> Learn More </a>
+                            </p>
+                    </li>
+
+                    <li class="main image">
+                        <img width= "450" src="images/industry.png">
+                    </li>
+                </ul>
 
         </section>
-
-
-        <footer>
-            <button>Learn More</button>
-        </footer>
-        
-
     </body>
 </html>
