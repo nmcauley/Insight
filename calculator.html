@@ -6,7 +6,7 @@
         <title>Insight® : Business Done Right</title>
     </head>
 
-    <!-- <link rel="stylesheet" href="styles/calculator.css"> -->
+    <link rel="stylesheet" href="styles/calculator.css">
     <link rel="stylesheet" href="styles/navbar.css">
 
     <body>
@@ -23,34 +23,9 @@
         </header>
         
       <section>
-        <div class="container">
-          <!-- intro tab -->
-          <div class="intro-questions">
-            <div class="business-type">
-              <h4>Let's get started</h4>
-              <p>What type of business do you operate?</p>
-              <select name="businesstype" id="businesstype">
-                <option value="fast-food"> Fast food chain</option>
-                <option value="local">Local restaurant</option>
-                <option value="luxury"> High-end restaurant</option>
-                <option value="store">Retail</option>
-              </select>
-            </div>
-
-            <div class="product-type">
-              <p>What product are you trying to determine the price for?</p>
-              <select name="product-type" id="product-type">
-                <option value="burger">Burger (beef)</option>
-                <option value="sandwich">Sandwich</option>
-                <option value="fries">French fries</option>
-                <option value="drink">Beverage</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
 
           <!-- tab 2 -->
-          <div class="units">
+          <!-- <div id="" class="tabcontent">
             <h4>Let's talk business</h4>
                 <label for="materialcost">Raw material cost per unit</label>
                 <input type="number" id="materialcost" name="materialcost">
@@ -75,50 +50,153 @@
               <label for="yoy"> Percentage of change in sales: </label> 
               <br>
               <p id="change"> 00.00%</p>
+            </div> -->
+
+<div class="container">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <button class="tablink business" onclick="openPage('business', this, 'rgb(209, 209, 209)')"id="defaultOpen">Business</button>
+  <button class="tablink metrics" onclick="openPage('metrics', this, 'rgb(192, 191, 191)')">Metrics</button>
+  <button class="tablink expenses" onclick="openPage('expenses', this, 'rgb(173, 173, 173)')">Expenses</button>
+  <button class="tablink profit" onclick="openPage('profit', this, 'rgb(163, 163, 163)')">Profit</button>
+
+  <div id="business" class="tabcontent">
+              <!-- intro tab -->
+              <div class="content">
+                <div class="business-type">
+                  <h4>Get started</h4>
+                  <label for="businesstype">What type of business do you operate?</label>
+                  <select name="businesstype" id="businesstype">
+                    <option value="fast-food"> Fast food chain</option>
+                    <option value="local">Local restaurant</option>
+                    <option value="luxury"> High-end restaurant</option>
+                    <option value="store">Retail</option>
+                  </select>
+                </div>
+  
+                <div class="product-type">
+                  <label for="producttype">What product are you trying to determine the price for?</label>
+                  <select name="product-type" id="product-type">
+                    <option value="burger">Burger (beef)</option>
+                    <option value="sandwich">Sandwich</option>
+                    <option value="fries">French fries</option>
+                    <option value="drink">Beverage</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <div class="fixed-costs">
-              <h4>Expenses</h4>
-              <label for="fixed-monthly">Fixed monthly costs</label>
-              <input type="number" id="fixed-monthly">
-              <br>
-              <label for="labor">Monthly labor costs (on average)</label>
-              <input type="number" id="labor">
-              <br>
-              <label for="covid-cost">Monthly COVID-19 cost</label>
-              <input type="number" id="covid-cost">
-            </div>
+  <div id="metrics" class="tabcontent">
+    <div class="row">
+      <div class=column>
+        <h4>Let's talk business</h4>
+        <label for="materialcost">Raw material cost per unit</label>
+        <input type="number" id="materialcost" name="materialcost">
+        <br>
 
-            <div class="final">
-              <h4>Here's what we found</h4>
-              <label for="Total Cost Per Unit"> (break-even)</label>
-              <p></p>
-            </div>
-              
+        <label for="lastmonth">Units sold last month</label>
+        <input type="number" id="lastmonth" name="lastmonth">
+        <br>
+        
+        <label for="lastmonth-lastyear">Units sold last month a year ago</label>
+        <input type="number" id="lastmonth-lastyear" name="lastmonth-lastyear">
+        <br>
 
-              <script>
-                document.getElementById("update").addEventListener("click", function(){
-                  var material = document.getElementById("materialcost").value;
-                  var lastMonth = document.getElementById("lastmonth").value;
-                  var lastYear = document.getElementById("lastmonth-lastyear").value;
-                  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+        <label for="nextmonth-lastyear">Units sold next month a year ago</label>
+        <input type="number" id="nextmonth-lastyear" name="nextmonth-lastyear">
+        <br>
+        <button style="margin-left: 73%;" class="update" id="update"> update</button>
+      </div>
+        
+      <div class="column">
+        <div class="output" style="margin-top: 170px; margin-left: 2px;">
+          <label for="unit-estimate">Estimated units that will be sold next month:</label>
+          <p style="color: rgba(19,119,250,1);" id="unit_estimate">00 units.</p>
 
-                  var percentChange = (lastMonth - lastYear)/lastYear;
-                  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+          <label for="yoy"> Percentage of change in sales: </label>
+          <p id="change"> 00.00%</p>
+       </div>  
+      </div>
+    </div>
 
-                  // if percent is negative then color will be red; otherwise green.
-                  if((percentChange * 100) < 0){
-                  }
+  </div>
 
-                  document.getElementById("change").innerHTML = Math.round((percentChange * 100), 2) + "%";
+  <div id="expenses" class="tabcontent">
+    <h4>Expenses</h4>
+    <label for="fixed-monthly">Fixed monthly costs</label>
+    <input type="number" id="fixed-monthly">
+    <br>
+    <label for="labor">Monthly labor costs (on average)</label>
+    <input type="number" id="labor">
+    <br>
+    <label for="covid-cost">Monthly COVID-19 cost</label>
+    <input type="number" id="covid-cost">
+    <br>
+    <button class="submit" id="submit">results</button>
+  </div>
 
-                  document.getElementById("unit_estimate").innerHTML = estimateNextMonth;
-                });
+  <div id="profit" class="tabcontent">
+    <h4>Here's what we found</h4>
+    <label for="breakeven">Your break-even price</label>
+    <p id="breakeven">00.00</p>
+  </div>
 
-                // document.getElementById("update").addEventListener("click", function(){};
+  <script>
+  function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
 
-              </script>
-          </div>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+document.getElementById("update").addEventListener("click", function(){
+  var material = document.getElementById("materialcost").value;
+  var lastMonth = document.getElementById("lastmonth").value;
+  var lastYear = document.getElementById("lastmonth-lastyear").value;
+  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+  var percentChange = (lastMonth - lastYear)/lastYear;
+  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+
+  if(percentChange < 0){
+    document.getElementById("change").innerHTML = 
+    (Math.round((percentChange * 100), 2) + "%").fontcolor("red");
+    document.getElementById("unit_estimate").innerHTML = estimateNextMonth + " units.";
+  }
+  else{
+    document.getElementById("change").innerHTML = 
+    (Math.round((percentChange * 100), 2) + "%").fontcolor("green");
+    document.getElementById("unit_estimate").innerHTML = estimateNextMonth + " units.";
+    }
+
+});
+
+document.getElementById("submit").addEventListener("click", function(){
+  var fixedMonthly = document.getElementById("fixed-monthly").value;
+  var labor = document.getElementById("labor").value;
+  var covidCost = document.getElementById("covid-cost").value;
+  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+  var material = document.getElementById("materialcost").value;
+
+  var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
+  var breakEven = (cost * 1.00) / (nextMonth * 1.00) + (material * 1.00);
+
+  document.getElementById("breakeven").innerHTML = Math.round(breakEven, 2);
+});
+  </script>
+
+</div>
+</div>
 
       </section>
 
