@@ -1,6 +1,3 @@
-<!--
-    Home page
--->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,7 +6,7 @@
         <title>Insight® : Business Done Right</title>
     </head>
 
-    <link rel="stylesheet" href="styles/calculator.css">
+    <!-- <link rel="stylesheet" href="styles/calculator.css"> -->
     <link rel="stylesheet" href="styles/navbar.css">
 
     <body>
@@ -25,120 +22,105 @@
             </nav>
         </header>
         
-        <section>
-            <div class="page">
-                <div class="text">
-                    <h2><b>Price Setting Calculator - INSIGHT®</b></h2>
-                        <p>www.insight.com makes price setting simple for small businesses</p>
-                </div>
-                    <div class="container">
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                        <button class="tablink product" onclick="openPage('Product', this, 'silver')"id="defaultOpen">Product</button>
-                        <button class="tablink price" onclick="openPage('Price', this, 'rgb(182, 180, 180)')">Price</button>
-                        <button class="tablink cost" onclick="openPage('Cost', this, 'rgb(163, 163, 163)')">Cost</button>
-                        <button class="tablink profit" onclick="openPage('Profit', this, 'rgb(150, 150, 150)')">Profit</button>
-
-                        <div id="Product" class="tabcontent">
-                          <h3>Product details</h3>
-                          <p>What are you looking for?</p>
-                            <form> 
-                              <table width="500" border="0">
-                                <tbody>
-                                  <tr>
-                                    <td><label>Material Cost</label></td> 
-                                    <td><input type="number" name="materialcost" id="materialcost"></td>
-                                  </tr><tr>
-                                    <td><label>Units Sold Last Month</label></td>
-                                    <td><input type="number" name="unitssoldlastmonth" id="unitssoldlastmonth"></td>
-                                  </tr><tr>
-                                    <td><label>Units Sold Last Month Last Year</label></td>
-                                    <td><input type="number" name="unitssoldlastmonthlastyear" id="unitssoldlastmonthlastyear"></td>
-                                  </tr><tr>
-                                    <td><label>Units Sold Next Month Last Year</label></td>
-                                    <td><input type="number" name="unitssoldnextmonthlastyear" id="unitssoldnextmonthlastyear"></td>
-                                  </tr><tr>
-                                    <td><label>% Change in Sales YTY</label></td>
-                                    <td><output name="% change in year" for="unitssoldlastmonth unitssoldlastmonthlastyear"></output></td>
-                                   </tr>
-                                </tbody>
-                             </table>
-                            </form>
-                          </div>
-
-                        <div id="Price" class="tabcontent">
-                          <h3>Price details</h3>
-                          <p>What's your asking price?</p>
-                            <form>
-                              <table width="500" border="0">
-                                <trbody>
-                                  <tr>
-                                    <td><label>Fixed Monthly Costs</label></td>
-                                    <td><input type="number" name="fixedcosts" id="fixedcosts"></td>
-                                  </tr><tr>
-                                    <td><label>Monthly Labor Costs</label></td>
-                                    <td><input type="number" name="monthlylabor" id="monthlylabor"></td>
-                                  </tr><tr>
-                                    <td><label>Monthly Covid Costs</label></td>
-                                    <td><input type="number" name="mothlycovid" id="monthlycovid"></td>
-                                  </tr>
-                                </trbody>
-                              </table>
-                            </form>
-                        </div>
-
-                        <div id="Cost" class="tabcontent">
-                          <h3>Cost Details</h3>
-                          <p>How much are you spending?</p>
-                            <form>
-                              <table width="500" border="0">
-                                <trbody>
-                                  <tr>
-                                    <td><label>Total Cost Per Unit</label></td>
-                                    <td><output name="totalcostperunit" for="fixedcosts monthlylabor monthlycovid"></output></td>
-                                  </tr>
-                                </trbody>
-                              </table>
-                            </form>
-                        </div>
-
-                        <div id="Profit" class="tabcontent">
-                          <h3>Profit</h3>
-                          <p>How much are you wanting to make?</p>
-                            <form>
-                              <table width="500" border="0">
-                                <trbody>
-                                  <tr>
-                                    <td><label><input type="submit" name="submit" id="submit" value="Submit"></label></td>
-                                  </tr>
-                                </trbody>
-                              </table>
-                            </form>
-                        </div>
-
-                        <script>
-                        function openPage(pageName,elmnt,color) {
-                          var i, tabcontent, tablinks;
-                          tabcontent = document.getElementsByClassName("tabcontent");
-                          for (i = 0; i < tabcontent.length; i++) {
-                            tabcontent[i].style.display = "none";
-                          }
-                          tablinks = document.getElementsByClassName("tablink");
-                          for (i = 0; i < tablinks.length; i++) {
-                            tablinks[i].style.backgroundColor = "";
-                          }
-                          document.getElementById(pageName).style.display = "block";
-                          elmnt.style.backgroundColor = color;
-                        }
-
-                        // Get the element with id="defaultOpen" and click on it
-                        document.getElementById("defaultOpen").click();
-                        </script>
-                                                                               
-                    </div>
-                </div>
+      <section>
+        <div class="container">
+          <!-- intro tab -->
+          <div class="intro-questions">
+            <div class="business-type">
+              <h4>Let's get started</h4>
+              <p>What type of business do you operate?</p>
+              <select name="businesstype" id="businesstype">
+                <option value="fast-food"> Fast food chain</option>
+                <option value="local">Local restaurant</option>
+                <option value="luxury"> High-end restaurant</option>
+                <option value="store">Retail</option>
+              </select>
             </div>
 
-        </section>
+            <div class="product-type">
+              <p>What product are you trying to determine the price for?</p>
+              <select name="product-type" id="product-type">
+                <option value="burger">Burger (beef)</option>
+                <option value="sandwich">Sandwich</option>
+                <option value="fries">French fries</option>
+                <option value="drink">Beverage</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- tab 2 -->
+          <div class="units">
+            <h4>Let's talk business</h4>
+                <label for="materialcost">Raw material cost per unit</label>
+                <input type="number" id="materialcost" name="materialcost">
+                <br>
+
+                <label for="lastmonth">Units sold last month</label>
+                <input type="number" id="lastmonth" name="lastmonth">
+                <br>
+                
+                <label for="lastmonth-lastyear">Units sold last month a year ago</label>
+                <input type="number" id="lastmonth-lastyear" name="lastmonth-lastyear">
+                <br>
+
+                <label for="nextmonth-lastyear">Units sold next month a year ago</label>
+                <input type="number" id="nextmonth-lastyear" name="nextmonth-lastyear">
+                <br>
+                <button id="update"> update</button>
+                <br>
+              <label for="unit-estimate">Estimated units that will be sold next month:</label>
+              <p id="unit_estimate">00</p>
+
+              <label for="yoy"> Percentage of change in sales: </label> 
+              <br>
+              <p id="change"> 00.00%</p>
+            </div>
+
+            <div class="fixed-costs">
+              <h4>Expenses</h4>
+              <label for="fixed-monthly">Fixed monthly costs</label>
+              <input type="number" id="fixed-monthly">
+              <br>
+              <label for="labor">Monthly labor costs (on average)</label>
+              <input type="number" id="labor">
+              <br>
+              <label for="covid-cost">Monthly COVID-19 cost</label>
+              <input type="number" id="covid-cost">
+            </div>
+
+            <div class="final">
+              <h4>Here's what we found</h4>
+              <label for="Total Cost Per Unit"> (break-even)</label>
+              <p></p>
+            </div>
+              
+
+              <script>
+                document.getElementById("update").addEventListener("click", function(){
+                  var material = document.getElementById("materialcost").value;
+                  var lastMonth = document.getElementById("lastmonth").value;
+                  var lastYear = document.getElementById("lastmonth-lastyear").value;
+                  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+                  var percentChange = (lastMonth - lastYear)/lastYear;
+                  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+
+                  // if percent is negative then color will be red; otherwise green.
+                  if((percentChange * 100) < 0){
+                  }
+
+                  document.getElementById("change").innerHTML = Math.round((percentChange * 100), 2) + "%";
+
+                  document.getElementById("unit_estimate").innerHTML = estimateNextMonth;
+                });
+
+                // document.getElementById("update").addEventListener("click", function(){};
+
+              </script>
+          </div>
+
+      </section>
 
     </body>
 </html>
