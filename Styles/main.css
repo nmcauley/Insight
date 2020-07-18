@@ -24,19 +24,6 @@ button.main.button{
     margin-left: 200px;
 }
 
-.login{
-    margin-left: 300px;
-    background-color: rgba(19,119,250,1);
-    color: white;
-    border-radius: 20px;
-    border: 1px solid rgb(214, 212, 212);
-    padding: 8px;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-    opacity: .8;
-}
-
-
 section.li.main{
     position: fixed;
     bottom: 200px;
@@ -47,31 +34,35 @@ section.li.main{
 section h1.header{
     position: fixed;
     top: 200px;
-    font-size: 42px;
+    font-size: 70px;
     color: black;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 section p.words{
     position: fixed;
-    top: 280px;
-    font-size: 21px;
+    top: 440px;
+    font-size: 18px;
     color: rgb(117, 117, 117);
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 strong{
     color: rgba(19,119,250,1);
 }
 
+sup{
+    font-size: 36px;
+}
+
 section .main.image{
     position: fixed;
     left: 660px;
-    top: 260px;
+    top: 220px;
 }
 
 .learnmore{
-    margin-left: 300px;
+    margin-left: 250px;
     background-color: rgba(19,119,250,1);
     color: white;
     border-radius: 20px;
@@ -79,10 +70,10 @@ section .main.image{
     padding: 8px;
     text-decoration: none;
     transition: 0.3s ease-in-out;
-    opacity: .8;
+    opacity: .9;
 }
 
 .learnmore:hover{ 
     background:rgb(23, 111, 226);
-    opacity: .9;
+    opacity: 1;
 }
