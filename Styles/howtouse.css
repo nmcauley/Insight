@@ -30,23 +30,6 @@ li{
 
 }
 
-.login{
-    margin-left: 300px;
-    background-color: rgba(19,119,250,1);
-    color: white;
-    border-radius: 20px;
-    border: 1px solid rgb(214, 212, 212);
-    padding: 8px;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-    opacity: .8;
-}
-
-.login:hover{ 
-    background:rgb(23, 111, 226);
-    opacity: .9;
-}
-
 section {
     margin: 30px, 80px, 120px, 30px;
 }
