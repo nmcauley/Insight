@@ -1,7 +1,6 @@
 /* MAIN PAGE */
 
 /* overall text color and font */
-
 body {
     background: rgb(88,160,255);
     background: linear-gradient(216deg, rgba(88,160,255,1) 0%, rgba(255,255,255,1) 59%);
@@ -25,14 +24,14 @@ button.main.button{
 }
 
 section.li.main{
-    position: fixed;
+    position: absolute;
     bottom: 200px;
     top: 200px;
 
 }
 
 section h1.header{
-    position: fixed;
+    position: absolute;
     top: 200px;
     font-size: 70px;
     color: black;
@@ -40,7 +39,7 @@ section h1.header{
 }
 
 section p.words{
-    position: fixed;
+    position: absolute;
     top: 440px;
     font-size: 18px;
     color: rgb(117, 117, 117);
@@ -56,7 +55,7 @@ sup{
 }
 
 section .main.image{
-    position: fixed;
+    position: absolute;
     left: 660px;
     top: 220px;
 }

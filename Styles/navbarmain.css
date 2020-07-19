@@ -60,7 +60,7 @@ header .login a:hover{
 }
 
 header .login a{
-    position: fixed;
+    position: absolute;
     right: 8%;
     border-radius: 20px;
     color:white;
