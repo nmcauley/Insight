@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Insight® : Business Done Right</title>
+          <link rel="stylesheet" href="styles/calculator.css">
+          <link rel="stylesheet" href="styles/navbar.css">
+          <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     </head>
-
-    <link rel="stylesheet" href="styles/calculator.css">
-    <link rel="stylesheet" href="styles/navbar.css">
 
     <body>
         <header>  
@@ -57,7 +57,7 @@
   <button class="tablink business" onclick="openPage('business', this, 'rgb(209, 209, 209)')"id="defaultOpen">Business</button>
   <button class="tablink metrics" onclick="openPage('metrics', this, 'rgb(192, 191, 191)')">Metrics</button>
   <button class="tablink expenses" onclick="openPage('expenses', this, 'rgb(173, 173, 173)')">Expenses</button>
-  <button class="tablink results" onclick="openPage('results', this, 'rgb(163, 163, 163)')">Results</button>
+  <button class="tablink results" >Results</button>
 
   <div id="business" class="tabcontent">
               <!-- intro tab -->
@@ -83,6 +83,7 @@
                     <option value="sandwich">Sandwich</option>
                     <option value="fries">French fries</option>
                     <option value="drink">Beverage</option>
+                    <option value="drink">Hot Dog</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
@@ -91,8 +92,9 @@
 
   <div id="metrics" class="tabcontent">
     <div class="row">
-      <div class=column>
+      <div class="column">
         <h4 style="margin-top: 30px;">Let's talk business</h4>
+
           <label for="materialcost">Raw material cost per unit</label>
         <div class="tooltip">
           <input type="number" id="materialcost" name="materialcost">
@@ -121,45 +123,79 @@
           <p class="unit-estimate" style="color: rgba(19,119,250,1);" id="unit_estimate">00 units.</p>
 
           <label for="yoy"> Percentage of change in sales: </label>
-          <p class="change" id="change"> 00.00%</p>
+          <p style="color: white;" class="change" id="change"> 00.00%</p>
        </div>  
       </div>
     </div>
 
   </div>
 
-  <div id="expenses" class="tabcontent">
+    <div id="expenses" class="tabcontent">
         <h4>Expenses</h4>
-
+        <label for="fixed-monthly">Fixed monthly costs</label>
         <div class="tooltip">
-          <label for="fixed-monthly">Fixed monthly costs</label>
           <input type="number" id="fixed-monthly">
           <span style="text-align: center;" class="tooltiptext">Includes monthly rent, utility/bills, insurance</span>
         </div>
 
+        <label style="margin-left: 150px;" for="covid-cost">Monthly COVID-19 cost</label>
         <div class="tooltip">
-          <label style="margin-left: 150px;" for="covid-cost">Monthly COVID-19 cost</label>
           <input type="number" id="covid-cost">
           <span style="text-align: center;" class="tooltiptext">PPE equipment(masks, gloves, etc..), sanitation, and any other expenses due to COVID-19</span>
         </div>
         <br>
 
+      <label for="labor">Monthly labor costs (on average)</label>
       <div class="tooltip">
-        <label for="labor">Monthly labor costs (on average)</label>
         <input type="number" id="labor">
         <span style="text-align: center;" class="tooltiptext">Sum of all employee wages, benefits, and/or payroll taxes</span>
       </div>
 
-        <button style="margin-left: 440px;" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
+      <button style="margin-left: 440px;" id="submit" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
   </div>
 
-  <div id="results" class="tabcontent">
-    <h4>Here's what we found</h4>
-    <div style="justify-content: center;" class="result">
-    <!-- <label for="breakeven">Your break-even price:</label> -->
-    <p class="breakeven" id="breakeven">Your break-even price:</p>
-  </div>
-  </div>
+    <div id="results" class="tabcontent">
+      <h4>Here's what we found:</h4>
+      <div style="justify-content: center;" class="result">
+      <p class="breakeven" id="breakeven">Your break-even price:</p>
+    
+      <div class="row">
+        <div class="column options">
+          <label for="">Profit margin:</label>
+          <br>
+          <br>
+          <div class="profit-btn" id="profit-btn">
+            <button>-5%</button>
+            <button>5%</button>
+            <button>10%</button>
+            <button>15%</button>
+            <button>20%</button>
+          </div>
+
+          <br>
+          <br>
+          <label for="">Price:</label>
+          <br>
+          <br>
+          <div class="price-btn" id="price-btn">
+            <button>-5%</button>
+            <button>5%</button>
+            <button>10%</button>
+            <button>15%</button>
+            <button>20%</button>
+          </div>
+          <br>
+          <p id="profit-margin-output">Price at selected profit margin:</p>
+          <br>
+          <p id="price-output">Profit margin at selected price:</p>
+        </div>
+
+        <div class="column chart">
+          <div id="chart"></div>
+        </div>
+      </div>
+    </div>
+</div>
 
   <script>
   function openPage(pageName,elmnt,color) {
@@ -212,8 +248,72 @@ document.getElementById("submit").addEventListener("click", function(){
   var breakEven = (cost * 1.00) / (nextMonth * 1.00) + (material * 1.00);
 
   document.getElementById("breakeven").innerHTML = "Your break-even price: $"+ breakEven.toFixed(2);
+
+  document.getElementById("profit-margin-output").innerHTML = "Price at selected profit margin: $" + breakEven;
 });
-  </script>
+
+var options = {
+  colors:[
+   // loss
+    '#cc0000',
+  // break-even
+   '#3366ff',
+  // profit
+  '#00cc00'],
+          series: [{
+          name: 'Loss',
+          data: [44, 55, 41, 67, 22]
+        }, {
+          name: 'Break Even',
+          data: [1, 1, 1, 1, 1]
+        }, {
+          name: 'Profit',
+          data: [11, 17, 15, 15, 21]
+          
+        }],
+
+
+          chart: {
+          type: 'bar',
+          height: 400,
+          stacked: true,
+          stackType: 'normal'
+        },
+        
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      legend: {
+      position: 'bottom',
+      offsetX: -10,
+      offsetY: 0
+      }
+    }
+  }],
+
+  yaxis: {
+    labels: {
+      formatter: function (value) {
+      return  "$" + value;
+        }
+      },
+  },
+  xaxis: {
+    categories: ['Burger (beef)', 'Sandwich', 'French fries', 'Beverage', 'Hot Dog'],
+  },
+  fill: {
+    opacity: 1
+  },
+  legend: {
+    position: 'right',
+    offsetX: 0,
+    offsetY: 50
+  },
+};
+
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
+</script>
 
 </div>
 </div>
