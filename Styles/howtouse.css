@@ -1,4 +1,17 @@
 body {
+    background: rgb(88,160,255);
+    background: linear-gradient(216deg, rgba(88,160,255,1) 0%, rgba(255,255,255,1) 59%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+/* background color courtesy of https://cssgradient.io/ */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Main Passage*/ 
+body {
     color: black;
     font-family: Helvetiva Neue, Helvetica, Arial;
     margin: 0;
@@ -17,6 +30,67 @@ li{
 
 }
 
+.login{
+    margin-left: 300px;
+    background-color: rgba(19,119,250,1);
+    color: white;
+    border-radius: 20px;
+    border: 1px solid rgb(214, 212, 212);
+    padding: 8px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    opacity: .8;
+}
+
+.login:hover{ 
+    background:rgb(23, 111, 226);
+    opacity: .9;
+}
+
 section {
     margin: 30px, 80px, 120px, 30px;
+}
+
+section h2.header{
+    position: fixed;
+    top: 160px;
+    font-size: 42px;
+    color: black;
+    margin-left: 20px;
+}
+
+section p.words{
+    position: fixed;
+    top: 240px;
+    font-size: 21px;
+    color: rgb(117, 117, 117);
+    margin-left: 20px;
+}
+
+section .main.image{
+    position: fixed;
+    left: 760px;
+    top: 200px;
+}
+
+footer{
+    position: fixed;
+    top: 430px;
+}
+
+.learnmore{
+    margin-left: 300px;
+    background-color: rgba(19,119,250,1);
+    color: white;
+    border-radius: 20px;
+    border: 1px solid rgb(214, 212, 212);
+    padding: 8px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    opacity: .8;
+}
+
+.learnmore:hover{ 
+    background:rgb(23, 111, 226);
+    opacity: .9;
 }
