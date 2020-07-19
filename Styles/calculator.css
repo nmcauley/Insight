@@ -91,6 +91,17 @@ select::-ms-expand {
     float: left;
     width: 50%;
   }
+
+
+
+.column.options {
+    float: left;
+    width: 45%;
+  }
+.column.chart{
+    float: left;
+    width: 55%;
+  }
   
   /* Clear floats after the columns */
   .row:after {
@@ -149,9 +160,9 @@ input::-webkit-inner-spin-button {
 }
 
 .breakeven{
-    font-size: 30px;
+    font-size: 38px;
     text-align: center;
-    color: white;
+    color: rgb(54, 140, 253);
 }
 
 .update, .submit{
@@ -179,12 +190,36 @@ output{
     margin-left: 100px;
 }
 
+.column.options label{
+    font-size: 26px;
+}
+
+.column.options button{
+    border: 1px solid rgb(54, 140, 253);
+    color: rgb(129, 129, 129);
+    border-style: dotted;
+    border-radius: 15px;
+    background-color: rgb(245, 245, 245);
+    font-size: 18px;
+    transition: ease-in-out .2s;
+    margin-right: 10px;
+
+}
+
+.column.options button:hover{
+    background-color: rgba(19,119,250,1);
+    color: white;
+}
+
+.column.options p{
+    font-size: 20px;
+}
 
 * {box-sizing: border-box;}
 
 /* Style tab links */
 .tablink {
-  background-color: #555;
+  background-color: rgb(54, 140, 253);
   color: white;
   float: left;
   border: none;
@@ -211,7 +246,7 @@ output{
 }
 
 .tablink.results{
-    background-color: rgb(163, 163, 163);
+    background-color: rgb(54, 140, 253)
 }
 
 
@@ -224,9 +259,10 @@ output{
 .tabcontent {
   color: rgb(82, 82, 82);
   padding: 20px 20px;
+  padding-left: 45px;
 }
 
 #business {background-color: rgb(209, 209, 209);}
 #metrics {background-color: rgb(192, 191, 191);}
 #expenses {background-color: rgb(173, 173, 173);}
-#results {background-color: rgb(163, 163, 163)}
+#results {background-color: rgb(245, 245, 245);}
