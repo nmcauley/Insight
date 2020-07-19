@@ -57,25 +57,28 @@
   <button class="tablink business" onclick="openPage('business', this, 'rgb(209, 209, 209)')"id="defaultOpen">Business</button>
   <button class="tablink metrics" onclick="openPage('metrics', this, 'rgb(192, 191, 191)')">Metrics</button>
   <button class="tablink expenses" onclick="openPage('expenses', this, 'rgb(173, 173, 173)')">Expenses</button>
-  <button class="tablink profit" onclick="openPage('profit', this, 'rgb(163, 163, 163)')">Profit</button>
+  <button class="tablink results" onclick="openPage('results', this, 'rgb(163, 163, 163)')">Results</button>
 
   <div id="business" class="tabcontent">
               <!-- intro tab -->
               <div class="content">
                 <div class="business-type">
                   <h4>Get started</h4>
-                  <label for="businesstype">What type of business do you operate?</label>
+                  <label for="business">What type of business do you operate?</label>
                   <select name="businesstype" id="businesstype">
-                    <option value="fast-food"> Fast food chain</option>
+                    <option>Select one</option>
+                    <option value="fast-food">Fast food chain</option>
                     <option value="local">Local restaurant</option>
-                    <option value="luxury"> High-end restaurant</option>
+                    <option value="luxury">High-end restaurant</option>
                     <option value="store">Retail</option>
                   </select>
+                  <div class="select-icon"></div>
                 </div>
   
                 <div class="product-type">
                   <label for="producttype">What product are you trying to determine the price for?</label>
                   <select name="product-type" id="product-type">
+                    <option >Select one</option>
                     <option value="burger">Burger (beef)</option>
                     <option value="sandwich">Sandwich</option>
                     <option value="fries">French fries</option>
@@ -89,9 +92,13 @@
   <div id="metrics" class="tabcontent">
     <div class="row">
       <div class=column>
-        <h4>Let's talk business</h4>
-        <label for="materialcost">Raw material cost per unit</label>
-        <input type="number" id="materialcost" name="materialcost">
+        <h4 style="margin-top: 30px;">Let's talk business</h4>
+          <label for="materialcost">Raw material cost per unit</label>
+        <div class="tooltip">
+          <input type="number" id="materialcost" name="materialcost">
+          <span style="text-align: center;" class="tooltiptext">This is the amount it costs for each unit produced</span>
+        </div>
+
         <br>
 
         <label for="lastmonth">Units sold last month</label>
@@ -105,16 +112,16 @@
         <label for="nextmonth-lastyear">Units sold next month a year ago</label>
         <input type="number" id="nextmonth-lastyear" name="nextmonth-lastyear">
         <br>
-        <button style="margin-left: 73%;" class="update" id="update"> update</button>
+        <button class="update" id="update"> update</button>
       </div>
         
       <div class="column">
         <div class="output" style="margin-top: 170px; margin-left: 2px;">
           <label for="unit-estimate">Estimated units that will be sold next month:</label>
-          <p style="color: rgba(19,119,250,1);" id="unit_estimate">00 units.</p>
+          <p class="unit-estimate" style="color: rgba(19,119,250,1);" id="unit_estimate">00 units.</p>
 
           <label for="yoy"> Percentage of change in sales: </label>
-          <p id="change"> 00.00%</p>
+          <p class="change" id="change"> 00.00%</p>
        </div>  
       </div>
     </div>
@@ -122,23 +129,36 @@
   </div>
 
   <div id="expenses" class="tabcontent">
-    <h4>Expenses</h4>
-    <label for="fixed-monthly">Fixed monthly costs</label>
-    <input type="number" id="fixed-monthly">
-    <br>
-    <label for="labor">Monthly labor costs (on average)</label>
-    <input type="number" id="labor">
-    <br>
-    <label for="covid-cost">Monthly COVID-19 cost</label>
-    <input type="number" id="covid-cost">
-    <br>
-    <button class="submit" id="submit">results</button>
+        <h4>Expenses</h4>
+
+        <div class="tooltip">
+          <label for="fixed-monthly">Fixed monthly costs</label>
+          <input type="number" id="fixed-monthly">
+          <span style="text-align: center;" class="tooltiptext">Includes monthly rent, utility/bills, insurance</span>
+        </div>
+
+        <div class="tooltip">
+          <label style="margin-left: 150px;" for="covid-cost">Monthly COVID-19 cost</label>
+          <input type="number" id="covid-cost">
+          <span style="text-align: center;" class="tooltiptext">PPE equipment(masks, gloves, etc..), sanitation, and any other expenses due to COVID-19</span>
+        </div>
+        <br>
+
+      <div class="tooltip">
+        <label for="labor">Monthly labor costs (on average)</label>
+        <input type="number" id="labor">
+        <span style="text-align: center;" class="tooltiptext">Sum of all employee wages, benefits, and/or payroll taxes</span>
+      </div>
+
+        <button style="margin-left: 440px;" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
   </div>
 
-  <div id="profit" class="tabcontent">
+  <div id="results" class="tabcontent">
     <h4>Here's what we found</h4>
-    <label for="breakeven">Your break-even price</label>
-    <p id="breakeven">00.00</p>
+    <div style="justify-content: center;" class="result">
+    <!-- <label for="breakeven">Your break-even price:</label> -->
+    <p class="breakeven" id="breakeven">Your break-even price:</p>
+  </div>
   </div>
 
   <script>
@@ -191,7 +211,7 @@ document.getElementById("submit").addEventListener("click", function(){
   var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
   var breakEven = (cost * 1.00) / (nextMonth * 1.00) + (material * 1.00);
 
-  document.getElementById("breakeven").innerHTML = Math.round(breakEven, 2);
+  document.getElementById("breakeven").innerHTML = "Your break-even price: $"+ breakEven.toFixed(2);
 });
   </script>
 
