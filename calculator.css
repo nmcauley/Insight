@@ -1,0 +1,284 @@
+/* home page for user after they login 
+*main page to use the tool* */
+
+/* tab format courtesy of  w3schools.com */
+
+body {
+    background: rgb(88,160,255);
+    background: linear-gradient(216deg, rgba(88,160,255,1) 0%, rgba(255,255,255,1) 59%);
+    /* background-color: white; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background color courtesy of https://cssgradient.io/ */  
+    color: rgb(16, 86, 177);
+    font-family: Helvetiva Neue, Helvetica, Arial;
+}
+
+/* tab 1 */
+/* select inputs
+    courtesy of levelup.gitconnected */
+select {
+    width: 150px;
+    height: 50px;
+    font-size: 100%;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #256ac4;
+    overflow: auto;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-left: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: ease-in-out .1s;
+    
+  }
+
+select:hover {
+      color: #2261b4;
+      background-color: white;
+      border-bottom-color: #DCDCDC;
+    }
+/* For IE <= 11 */
+select::-ms-expand {
+   display: none;
+}
+/*  */
+
+/* hover tooltip to help the user understand what is specifically being asked */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    right: 0;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+/*  */
+
+
+.column {
+    float: left;
+    width: 50%;
+  }
+
+
+
+.column.options {
+    float: left;
+    width: 45%;
+  }
+.column.chart{
+    float: left;
+    width: 55%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+section .container{
+    padding: 60px 120px;
+}
+
+h4{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(19,119,250,1);
+}
+
+input, label:not(.unit-estimate, .yoy), select{
+    margin-bottom: 38px;
+}
+
+input{
+    height: 30px;
+    width: 140px;
+    border: 1px solid silver;
+    border-radius: 15px;
+    padding-left: 15px;
+    color: rgb(141, 141, 141);
+    font-size: 18px;
+    outline: none;
+    transition: .4s;
+}
+
+input:focus{
+    border: 1px solid rgba(228,228,228,1);
+    box-shadow: 0 0 6px rgba(19,119,250,1);
+}
+
+label{
+    /* height: 20px; */
+    font-size: 24px;
+}
+
+/* removes increment arrow on input
+    courtesy of w3schools.com*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.change, .unit-estimate{
+    font-size: 25px;
+    margin-left: 180px;
+}
+
+.breakeven{
+    font-size: 38px;
+    text-align: center;
+    color: rgb(54, 140, 253);
+}
+
+.update, .submit{
+    width: 120px;
+    height: 40px;
+    background:white;
+    border-radius: 10px;
+    color:rgba(19,119,250,1);
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    transition: ease-in-out 0.15s;
+}
+
+.submit:hover, .update:hover{
+    background-color: rgba(19,119,250,1);
+    color: white;
+}
+
+input:hover{
+    background-color: rgb(240, 238, 238);
+}
+
+output{
+    margin-left: 100px;
+}
+
+.column.options label{
+    font-size: 26px;
+}
+
+.column.options button{
+    border: 2px solid rgb(54, 140, 253);
+    color: rgb(129, 129, 129);
+    border-style: dotted;
+    border-radius: 15px;
+    background-color: rgb(245, 245, 245);
+    font-size: 18px;
+    transition: ease-in-out .2s;
+    margin-right: 10px;
+
+}
+
+.column.options input{
+    width: 100px;
+    height: 32px;
+    border: 2px solid rgb(54, 140, 253);
+    border-style: dotted;
+    border-radius: 15px;
+    padding-left: 10px;
+    color: rgb(141, 141, 141);
+    font-size: 14px;
+    outline: none;
+    transition: .4s;
+
+}
+
+.column.options button:hover{
+    background-color: rgba(19,119,250,1);
+    color: white;
+}
+
+.column.options p{
+    font-size: 20px;
+}
+
+* {box-sizing: border-box;}
+
+/* Style tab links */
+.tablink {
+  background-color: rgb(54, 140, 253);
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 25%;
+  margin-top: 0px;
+  transition: ease-in-out .3s;
+}
+
+.tablink.business{
+    background-color: rgb(209, 209, 209);
+}
+
+.tablink.metrics{
+    background-color: rgb(192, 191, 191);
+}
+
+.tablink.expenses{
+    background-color: rgb(173, 173, 173);
+}
+
+.tablink.results{
+    background-color: rgb(54, 140, 253)
+}
+
+
+.tablink:hover{
+  background-color:rgb(54, 140, 253);
+  opacity: .9;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: rgb(82, 82, 82);
+  padding: 20px 20px;
+  padding-left: 45px;
+}
+
+#business {background-color: rgb(209, 209, 209);}
+#metrics {background-color: rgb(192, 191, 191);}
+#expenses {background-color: rgb(173, 173, 173);}
+#results {background-color: rgb(245, 245, 245);}
