@@ -18,13 +18,15 @@ body {
 /* select inputs
     courtesy of levelup.gitconnected */
 select {
-    width: 104px;
+    width: 150px;
     height: 50px;
     font-size: 100%;
+    text-align: center;
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
     background-color: #256ac4;
+    overflow: auto;
     border: none;
     color: white;
     padding: 10px;
@@ -195,7 +197,7 @@ output{
 }
 
 .column.options button{
-    border: 1px solid rgb(54, 140, 253);
+    border: 2px solid rgb(54, 140, 253);
     color: rgb(129, 129, 129);
     border-style: dotted;
     border-radius: 15px;
@@ -203,6 +205,20 @@ output{
     font-size: 18px;
     transition: ease-in-out .2s;
     margin-right: 10px;
+
+}
+
+.column.options input{
+    width: 100px;
+    height: 32px;
+    border: 2px solid rgb(54, 140, 253);
+    border-style: dotted;
+    border-radius: 15px;
+    padding-left: 10px;
+    color: rgb(141, 141, 141);
+    font-size: 14px;
+    outline: none;
+    transition: .4s;
 
 }
 
