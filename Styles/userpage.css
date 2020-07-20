@@ -13,6 +13,11 @@ body {
         font-family: Helvetiva Neue, Helvetica, Arial;
     }
 
+ h3{
+     font-size: 50px;
+     font-weight: bold;
+     color: rgba(19,119,250,1);
+}
 
 section .text{
     margin-top: 50px;
@@ -26,7 +31,26 @@ section .container{
 
 
 * {box-sizing: border-box;}
-
+/* tab 1 */
+/* select inputs
+    courtesy of levelup.gitconnected */
+    select {
+        width: 104px;
+        height: 50px;
+        font-size: 100%;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 10px;
+        background-color: #256ac4;
+        border: none;
+        color: white;
+        padding: 10px;
+        margin-left: 14px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        transition: ease-in-out .1s;
+        
+      }
 /* Style tab links */
 .tablink {
   background-color: #555;
@@ -43,7 +67,7 @@ section .container{
 }
 
 .tablink.product{
-    background-color: silver;
+    background-color: rgb(209, 209, 209);
 }
 
 .tablink.price{
