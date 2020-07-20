@@ -159,39 +159,44 @@
       <div style="justify-content: center;" class="result">
       <p class="breakeven" id="breakeven">Your break-even price:</p>
     
-      <div class="row">
+      <div class="row" style="padding-bottom: 50px;">
         <div class="column options">
+          <p style="margin-top: 20px; color: rgba(19,119,250,1);" id="percent-change-unit">Estimated units sold next month: </p>
+          <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="price-output">Price at selected profit margin:</p>
+          <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="percent-change-price">New price at adjusted unit projection: </p>
+
+          <br>
           <label for="">Profit margin:</label>
           <br>
           <br>
           <div class="profit-btn" id="profit-btn">
-            <button>-5%</button>
-            <button>5%</button>
-            <button>10%</button>
-            <button>15%</button>
-            <button>20%</button>
+            <button onclick=" return priceGenerator(-.05)">-5%</button>
+            <button onclick=" return priceGenerator(.05)">5%</button>
+            <button onclick=" return priceGenerator(.1)">10%</button>
+            <button onclick=" return priceGenerator(.15)">15%</button>
+            <button onclick=" return priceGenerator(.20)">20%</button>
+            <!-- <input type="text" onclick="return priceGenerator(this)" placeholder="(.00 format)"> -->
           </div>
 
           <br>
           <br>
-          <label for="">Price:</label>
+          <label for="">Change in units sold next month:</label>
           <br>
           <br>
           <div class="price-btn" id="price-btn">
-            <button>-5%</button>
-            <button>5%</button>
-            <button>10%</button>
-            <button>15%</button>
-            <button>20%</button>
+            <button onclick=" return marginGenerator(-.05)">-5%</button>
+            <button onclick=" return marginGenerator(.05)">5%</button>
+            <button onclick=" return marginGenerator(.1)">10%</button>
+            <button onclick=" return marginGenerator(.15)">15%</button>
+            <button onclick=" return marginGenerator(.20)">20%</button>
+            <!-- <input type="number" onclick="return priceGenerator(this)" placeholder="(.00 format)"> -->
           </div>
-          <br>
-          <p id="profit-margin-output">Price at selected profit margin:</p>
-          <br>
-          <p id="price-output">Profit margin at selected price:</p>
+          <!-- <br>
+          <p id="profit-margin">Profit margin at selected price:</p> -->
         </div>
 
         <div class="column chart">
-          <div id="chart"></div>
+          <div style="margin-right: 20px;" id="chart"></div>
         </div>
       </div>
     </div>
@@ -243,14 +248,66 @@ document.getElementById("submit").addEventListener("click", function(){
   var covidCost = document.getElementById("covid-cost").value;
   var nextMonth = document.getElementById("nextmonth-lastyear").value;
   var material = document.getElementById("materialcost").value;
+  var material = document.getElementById("materialcost").value;
+  var lastMonth = document.getElementById("lastmonth").value;
+  var lastYear = document.getElementById("lastmonth-lastyear").value;
+  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+  var percentChange = (lastMonth - lastYear)/lastYear;
+  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+
 
   var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
-  var breakEven = (cost * 1.00) / (nextMonth * 1.00) + (material * 1.00);
+  var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
 
   document.getElementById("breakeven").innerHTML = "Your break-even price: $"+ breakEven.toFixed(2);
+  document.getElementById("percent-change-unit").innerHTML ="Estimated units sold next month: " + estimateNextMonth;
 
-  document.getElementById("profit-margin-output").innerHTML = "Price at selected profit margin: $" + breakEven;
+
 });
+
+function priceGenerator(x){
+  var fixedMonthly = document.getElementById("fixed-monthly").value;
+  var labor = document.getElementById("labor").value;
+  var covidCost = document.getElementById("covid-cost").value;
+  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+  var material = document.getElementById("materialcost").value;
+  var material = document.getElementById("materialcost").value;
+  var lastMonth = document.getElementById("lastmonth").value;
+  var lastYear = document.getElementById("lastmonth-lastyear").value;
+  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+  var percentChange = (lastMonth - lastYear)/lastYear;
+  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+
+
+  var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
+  var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
+
+  document.getElementById("price-output").innerHTML = "Price at selected profit margin: $" + ((x * breakEven) + breakEven).toFixed(2);
+}
+
+function marginGenerator(y){
+  var fixedMonthly = document.getElementById("fixed-monthly").value;
+  var labor = document.getElementById("labor").value;
+  var covidCost = document.getElementById("covid-cost").value;
+  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+  var material = document.getElementById("materialcost").value;
+  var material = document.getElementById("materialcost").value;
+  var lastMonth = document.getElementById("lastmonth").value;
+  var lastYear = document.getElementById("lastmonth-lastyear").value;
+  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+  var percentChange = (lastMonth - lastYear)/lastYear;
+  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+
+  var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
+
+  var newEstimate = Math.floor(estimateNextMonth * y) + parseFloat(estimateNextMonth);
+  var breakEven = (cost * 1.00) / (newEstimate * 1.00) + material;
+
+  document.getElementById("percent-change-price").innerHTML = "New price at adjusted unit projection (" + newEstimate + "): " + breakEven;
+}
 
 var options = {
   colors:[
@@ -275,7 +332,7 @@ var options = {
 
           chart: {
           type: 'bar',
-          height: 400,
+          height: 450,
           stacked: true,
           stackType: 'normal'
         },
@@ -313,6 +370,7 @@ var options = {
 
   var chart = new ApexCharts(document.querySelector("#chart"), options);
   chart.render();
+
 </script>
 
 </div>
