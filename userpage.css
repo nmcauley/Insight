@@ -1,0 +1,108 @@
+/* home page for user after they login 
+*main page to use the tool* */
+
+/* tab format courtesy of  w3schools.com */
+
+body {
+    background: rgb(88,160,255);
+    background: linear-gradient(216deg, rgba(88,160,255,1) 0%, rgba(255,255,255,1) 59%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background color courtesy of https://cssgradient.io/ */  
+        color: rgb(16, 86, 177);
+        font-family: Helvetiva Neue, Helvetica, Arial;
+    }
+
+ h3{
+     font-size: 50px;
+     margin-left: 14px;
+     padding: 30px;
+     font-weight: bold;
+     color: rgba(19,119,250,1);
+}
+
+p{
+    font-size: 25px;
+    margin-left: 14px;
+    padding-left: 30px;
+}
+
+section .text{
+    margin-top: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+section .container{
+    padding: 20px 120px;
+}
+
+
+* {box-sizing: border-box;}
+/* tab 1 */
+/* select inputs
+    courtesy of levelup.gitconnected */
+    select {
+        width: 104px;
+        height: 50px;
+        font-size: 100%;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 10px;
+        background-color: #256ac4;
+        border: none;
+        color: white;
+        padding: 10px;
+        margin-left: 14px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        transition: ease-in-out .1s;
+        
+      }
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 25%;
+  margin-top: 0px;
+}
+
+.tablink.product{
+    background-color: rgb(209, 209, 209);
+}
+
+.tablink.price{
+    background-color: rgb(182, 180, 180);
+}
+
+.tablink.cost{
+    background-color: rgb(163, 163, 163);
+}
+
+.tablink.profit{
+    background-color: rgb(54, 140, 253);
+}
+
+
+.tablink:hover{
+    background-color: rgba(19,119,250,1);
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding-bottom: 35%;
+}
+
+#Product {background-color: silver;}
+#Price {background-color: rgb(182, 180, 180);}
+#Cost {background-color: rgb(163, 163, 163);}
+#Profit {background-color: rgb(150, 150, 150);}
