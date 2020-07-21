@@ -114,7 +114,7 @@
         <label for="nextmonth-lastyear">Units sold next month a year ago</label>
         <input type="number" id="nextmonth-lastyear" name="nextmonth-lastyear">
         <br>
-        <button class="update" id="update"> update</button>
+        <button class="update" id="update">update</button>
       </div>
         
       <div class="column">
@@ -151,7 +151,7 @@
         <span style="text-align: center;" class="tooltiptext">Sum of all employee wages, benefits, and/or payroll taxes</span>
       </div>
 
-      <button style="margin-left: 440px;" id="submit" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
+      <button style="margin-left: 430px;" id="submit" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
   </div>
 
     <div id="results" class="tabcontent">
@@ -161,11 +161,6 @@
     
       <div class="row" style="padding-bottom: 50px;">
         <div class="column options">
-          <p style="margin-top: 20px; color: rgba(19,119,250,1);" id="percent-change-unit">Estimated units sold next month: </p>
-          <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="price-output">Price at selected profit margin:</p>
-          <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="percent-change-price">New price at adjusted unit projection: </p>
-
-          <br>
           <label for="">Profit margin:</label>
           <br>
           <br>
@@ -191,8 +186,11 @@
             <button onclick=" return marginGenerator(.20)">20%</button>
             <!-- <input type="number" onclick="return priceGenerator(this)" placeholder="(.00 format)"> -->
           </div>
-          <!-- <br>
-          <p id="profit-margin">Profit margin at selected price:</p> -->
+          <br>
+          <p style="margin-top: 20px; color: rgba(19,119,250,1);" id="percent-change-unit">Estimated units sold next month: </p>
+          <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="price-output">Price at selected profit margin:</p>
+          <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="percent-change-price">New price at adjusted unit projection: </p>
+
         </div>
 
         <div class="column chart">
@@ -263,7 +261,6 @@ document.getElementById("submit").addEventListener("click", function(){
   document.getElementById("breakeven").innerHTML = "Your break-even price: $"+ breakEven.toFixed(2);
   document.getElementById("percent-change-unit").innerHTML ="Estimated units sold next month: " + estimateNextMonth;
 
-
 });
 
 function priceGenerator(x){
@@ -285,6 +282,7 @@ function priceGenerator(x){
   var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
 
   document.getElementById("price-output").innerHTML = "Price at selected profit margin: $" + ((x * breakEven) + breakEven).toFixed(2);
+
 }
 
 function marginGenerator(y){
@@ -304,72 +302,151 @@ function marginGenerator(y){
   var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
 
   var newEstimate = Math.floor(estimateNextMonth * y) + parseFloat(estimateNextMonth);
-  var breakEven = (cost * 1.00) / (newEstimate * 1.00) + material;
+  var breakEven = ((cost * 1.00) / (newEstimate * 1.00)) + (material * 1.00);
 
-  document.getElementById("percent-change-price").innerHTML = "New price at adjusted unit projection (" + newEstimate + "): " + breakEven;
+  document.getElementById("percent-change-price").innerHTML = "New price at adjusted unit projection: " + "(" + newEstimate + " units) $" + breakEven.toFixed(2);
 }
 
+// function dataBuilder{
+//   var fixedMonthly = document.getElementById("fixed-monthly").value;
+//   var labor = document.getElementById("labor").value;
+//   var covidCost = document.getElementById("covid-cost").value;
+//   var nextMonth = document.getElementById("nextmonth-lastyear").value;
+//   var material = document.getElementById("materialcost").value;
+//   var material = document.getElementById("materialcost").value;
+//   var lastMonth = document.getElementById("lastmonth").value;
+//   var lastYear = document.getElementById("lastmonth-lastyear").value;
+//   var nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+//   var percentChange = (lastMonth - lastYear)/lastYear;
+//   var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+
+
+//   var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
+//   var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
+
+//   var breakEvenArray = [];
+//   var count = 0;
+//   for(i = -5; i > 5; i++){
+//     breakEven + 1
+//   }
+// }
+
 var options = {
-  colors:[
-   // loss
-    '#cc0000',
-  // break-even
-   '#3366ff',
-  // profit
-  '#00cc00'],
           series: [{
-          name: 'Loss',
-          data: [44, 55, 41, 67, 22]
-        }, {
-          name: 'Break Even',
-          data: [1, 1, 1, 1, 1]
-        }, {
-          name: 'Profit',
-          data: [11, 17, 15, 15, 21]
-          
+          name: 'Cash Flow',
+          data: [1.45, 5.42, 5.9, -0.42, -12.6, -18.1, -18.2, -14.16, -11.1, -6.09, 0.34, 3.88, 13.07,
+            5.8, 2, 7.37, 8.1, 13.57, 15.75, 17.1, 19.8, -27.03, -54.4, -47.2, -43.3, -18.6, -
+            48.6, -41.1, -39.6, -37.6, -29.4, -21.4, -2.4
+          ]
         }],
-
-
           chart: {
           type: 'bar',
-          height: 450,
-          stacked: true,
-          stackType: 'normal'
+          height: 350
         },
-        
-  responsive: [{
-    breakpoint: 480,
-    options: {
-      legend: {
-      position: 'bottom',
-      offsetX: -10,
-      offsetY: 0
-      }
-    }
-  }],
-
-  yaxis: {
-    labels: {
-      formatter: function (value) {
-      return  "$" + value;
+        plotOptions: {
+          bar: {
+            colors: {
+              ranges: [{
+                from: -100,
+                to: -46,
+                color: '#F15B46'
+              }, {
+                from: -45,
+                to: 0,
+                color: '#FEB019'
+              }]
+            },
+            columnWidth: '80%',
+          }
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        yaxis: {
+          title: {
+            text: 'Growth',
+          },
+          labels: {
+            formatter: function (y) {
+              return y.toFixed(0) + "%";
+            }
+          }
+        },
+        xaxis: {
+          type: 'normal',
+          categories: [ "burger (beef)"
+          ],
+          labels: {
+            rotate: -90
+          }
         }
-      },
-  },
-  xaxis: {
-    categories: ['Burger (beef)', 'Sandwich', 'French fries', 'Beverage', 'Hot Dog'],
-  },
-  fill: {
-    opacity: 1
-  },
-  legend: {
-    position: 'right',
-    offsetX: 0,
-    offsetY: 50
-  },
-};
+        };
 
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+// var options = {
+//   colors:[
+//    // loss
+//     '#cc0000',
+//   // break-even
+//    '#3366ff',
+//   // profit
+//   '#00cc00'],
+//           series: [{
+//           name: 'Loss',
+//           // data: [44, 55, 41, 67, 22]
+//         }, {
+//           name: 'Break Even',
+//           // data: [1, 1, 1, 1, 1]
+//         }, {
+//           name: 'Profit',
+//           // data: [11, 17, 15, 15, 21]
+          
+//         }],
+
+
+//           chart: {
+//           type: 'bar',
+//           height: 450,
+//           stacked: true,
+//           stackType: 'normal'
+//         },
+        
+//   responsive: [{
+//     breakpoint: 480,
+//     options: {
+//       legend: {
+//       position: 'bottom',
+//       offsetX: -10,
+//       offsetY: 0
+//       }
+//     }
+//   }],
+
+//   yaxis: {
+//     labels: {
+//       formatter: function (value) {
+//       return  "$" + value;
+//         }
+//       },
+//   },
+//   xaxis: {
+//     categories: ['Burger (beef)'],
+//   },
+//   fill: {
+//     opacity: 1
+//   },
+//   legend: {
+//     position: 'right',
+//     offsetX: 0,
+//     offsetY: 50
+//   },
+// };
+
+//   var chart = new ApexCharts(document.querySelector("#chart"), options);
+//   chart.render();
 
 </script>
 
