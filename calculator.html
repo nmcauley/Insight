@@ -17,6 +17,7 @@
                     <li> <a href="index.html"> <b>Home</b> </a> </li>
                     <li> <a href="how_to_use.html"> <b>How To Use</b> </a> </li>
                     <li> <a href="contact_us.html"> <b>Contact Us</b> </a> </li>
+                    <li> <a href="about.html"> <b>About</b> </a> </li>
                     <li class="username"> <a href=""> <b>user37921</b> </a> </li>
                 </ul>
             </nav>
@@ -95,12 +96,6 @@
       <div class="column">
         <h4 style="margin-top: 30px;">Let's talk business</h4>
 
-          <label for="materialcost">Raw material cost per unit</label>
-        <div class="tooltip">
-          <input type="number" id="materialcost" name="materialcost">
-          <span style="text-align: center;" class="tooltiptext">This is the amount it costs for each unit produced</span>
-        </div>
-
         <br>
 
         <label for="lastmonth">Units sold last month</label>
@@ -131,27 +126,40 @@
   </div>
 
     <div id="expenses" class="tabcontent">
-        <h4>Expenses</h4>
-        <label for="fixed-monthly">Fixed monthly costs</label>
-        <div class="tooltip">
-          <input type="number" id="fixed-monthly">
-          <span style="text-align: center;" class="tooltiptext">Includes monthly rent, utility/bills, insurance</span>
+      <div class="row">
+        <div class="column">
+          <h4 style="margin-top: 30px;">Expenses</h4>
+          <label for="materialcost">Raw material cost per unit</label>
+          <div class="tooltip">
+            <input type="number" id="materialcost" name="materialcost">
+            <span style="text-align: center;" class="tooltiptext">This is the amount it costs for each unit produced</span>
+          </div>
+          <br>
+          <label for="fixed-monthly">Fixed monthly costs</label>
+          <div class="tooltip">
+            <input type="number" id="fixed-monthly">
+            <span style="text-align: center;" class="tooltiptext">Includes monthly rent, utility/bills, insurance</span>
+          </div>
+          <br>
         </div>
 
-        <label style="margin-left: 150px;" for="covid-cost">Monthly COVID-19 cost</label>
-        <div class="tooltip">
-          <input type="number" id="covid-cost">
-          <span style="text-align: center;" class="tooltiptext">PPE equipment(masks, gloves, etc..), sanitation, and any other expenses due to COVID-19</span>
-        </div>
-        <br>
+        <div style="margin-top: 135px;" class="column">
+          <label for="covid-cost">Monthly COVID-19 cost</label>
+          <div class="tooltip">
+            <input style="margin-left: 100px;" type="number" id="covid-cost">
+            <span style="text-align: center;" class="tooltiptext">PPE equipment(masks, gloves, etc..), sanitation, and any other expenses due to COVID-19</span>
+          </div>
+          <br>
 
-      <label for="labor">Monthly labor costs (on average)</label>
-      <div class="tooltip">
-        <input type="number" id="labor">
-        <span style="text-align: center;" class="tooltiptext">Sum of all employee wages, benefits, and/or payroll taxes</span>
+          <label for="labor">Monthly labor costs (on average)</label>
+          <div class="tooltip">
+            <input type="number" id="labor">
+            <span style="text-align: center;" class="tooltiptext">Sum of all employee wages, benefits, and/or payroll taxes</span>
+          </div>
+
+          <button style="margin-left: 366px;" id="submit" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
+        </div>
       </div>
-
-      <button style="margin-left: 430px;" id="submit" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
   </div>
 
     <div id="results" class="tabcontent">
@@ -189,6 +197,7 @@
           <br>
           <p style="margin-top: 20px; color: rgba(19,119,250,1);" id="percent-change-unit">Estimated units sold next month: </p>
           <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="price-output">Price at selected profit margin:</p>
+          <p style="margin-top: 25px; color: rgba(19,119,250,1);">New price at adjusted unit projection: </p>
           <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="percent-change-price">New price at adjusted unit projection: </p>
 
         </div>
