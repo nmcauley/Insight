@@ -23,35 +23,8 @@
             </nav>
         </header>
         
-      <section>
+  <section>
 
-          <!-- tab 2 -->
-          <!-- <div id="" class="tabcontent">
-            <h4>Let's talk business</h4>
-                <label for="materialcost">Raw material cost per unit</label>
-                <input type="number" id="materialcost" name="materialcost">
-                <br>
-
-                <label for="lastmonth">Units sold last month</label>
-                <input type="number" id="lastmonth" name="lastmonth">
-                <br>
-                
-                <label for="lastmonth-lastyear">Units sold last month a year ago</label>
-                <input type="number" id="lastmonth-lastyear" name="lastmonth-lastyear">
-                <br>
-
-                <label for="nextmonth-lastyear">Units sold next month a year ago</label>
-                <input type="number" id="nextmonth-lastyear" name="nextmonth-lastyear">
-                <br>
-                <button id="update"> update</button>
-                <br>
-              <label for="unit-estimate">Estimated units that will be sold next month:</label>
-              <p id="unit_estimate">00</p>
-
-              <label for="yoy"> Percentage of change in sales: </label> 
-              <br>
-              <p id="change"> 00.00%</p>
-            </div> -->
 
 <div class="container">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,8 +39,8 @@
                 <div class="business-type">
                   <h4>Get started</h4>
                   <label for="business">What type of business do you operate?</label>
-                  <select name="businesstype" id="businesstype">
-                    <option>Select one</option>
+                  <select name="businesstype" id="businesstype" >
+                    <option disabled selected>Select one &#9660;</option>
                     <option value="fast-food">Fast food chain</option>
                     <option value="local">Local restaurant</option>
                     <option value="luxury">High-end restaurant</option>
@@ -79,7 +52,7 @@
                 <div class="product-type">
                   <label for="producttype">What product are you trying to determine the price for?</label>
                   <select name="product-type" id="product-type">
-                    <option >Select one</option>
+                    <option disabled selected>Select one &#9660;</option>
                     <option value="burger">Burger (beef)</option>
                     <option value="sandwich">Sandwich</option>
                     <option value="fries">French fries</option>
@@ -87,6 +60,9 @@
                     <option value="drink">Hot Dog</option>
                     <option value="other">Other</option>
                   </select>
+                </div>
+                <div class="next-prev">
+                  <button class="next" onclick="openPage('metrics', this, 'rgb(163, 163, 163)')">Next &raquo;</button>
                 </div>
               </div>
             </div>
@@ -98,18 +74,23 @@
 
         <br>
 
-        <label for="lastmonth">Units sold last month</label>
-        <input type="number" id="lastmonth" name="lastmonth">
+        <label for="lastmonth">Total units sold last month:</label>
+        <input style="margin-left: 20px;" type="number" id="lastmonth" name="lastmonth">
         <br>
         
-        <label for="lastmonth-lastyear">Units sold last month a year ago</label>
-        <input type="number" id="lastmonth-lastyear" name="lastmonth-lastyear">
+        <label for="lastmonth-lastyear">Total last month a year ago:</label>
+        <input style="margin-left: 9px;" type="number" id="lastmonth-lastyear" name="lastmonth-lastyear">
         <br>
 
-        <label for="nextmonth-lastyear">Units sold next month a year ago</label>
+        <label for="nextmonth-lastyear">Total next month a year ago:</label>
         <input type="number" id="nextmonth-lastyear" name="nextmonth-lastyear">
         <br>
-        <button class="update" id="update">update</button>
+        <button style="margin-left: 315px; margin-bottom: 20px;" class="update" id="update">update</button>
+
+        <div class="next-prev">
+          <button class="previous" onclick="openPage('business', this, 'rgb(163, 163, 163)')">&laquo; Previous</button>
+          <button class="next" onclick="openPage('expenses', this, 'rgb(163, 163, 163)')">Next &raquo;</button>
+        </div>
       </div>
         
       <div class="column">
@@ -119,6 +100,7 @@
 
           <label for="yoy"> Percentage of change in sales: </label>
           <p style="color: white;" class="change" id="change"> 00.00%</p>
+
        </div>  
       </div>
     </div>
@@ -129,35 +111,39 @@
       <div class="row">
         <div class="column">
           <h4 style="margin-top: 30px;">Expenses</h4>
-          <label for="materialcost">Raw material cost per unit</label>
+          <label for="materialcost">Raw material cost per unit:</label>
           <div class="tooltip">
             <input type="number" id="materialcost" name="materialcost">
             <span style="text-align: center;" class="tooltiptext">This is the amount it costs for each unit produced</span>
           </div>
           <br>
-          <label for="fixed-monthly">Fixed monthly costs</label>
+          <label for="fixed-monthly">Fixed monthly costs:</label>
           <div class="tooltip">
-            <input type="number" id="fixed-monthly">
+            <input style="margin-left: 65px;" type="number" id="fixed-monthly">
             <span style="text-align: center;" class="tooltiptext">Includes monthly rent, utility/bills, insurance</span>
           </div>
           <br>
+          <div class="next-prev">
+            <button  class="previous" onclick="openPage('metrics', this, 'rgb(163, 163, 163)')">&laquo; Previous</button>
+          </div>
         </div>
 
-        <div style="margin-top: 135px;" class="column">
-          <label for="covid-cost">Monthly COVID-19 cost</label>
+        <div style="margin-top: 158px;" class="column">
+          <label for="covid-cost">Monthly COVID-19 cost:</label>
           <div class="tooltip">
-            <input style="margin-left: 100px;" type="number" id="covid-cost">
+            <input style="margin-left: 95px;" type="number" id="covid-cost">
             <span style="text-align: center;" class="tooltiptext">PPE equipment(masks, gloves, etc..), sanitation, and any other expenses due to COVID-19</span>
           </div>
           <br>
 
-          <label for="labor">Monthly labor costs (on average)</label>
+          <label for="labor">Monthly labor costs: (on average)</label>
           <div class="tooltip">
             <input type="number" id="labor">
             <span style="text-align: center;" class="tooltiptext">Sum of all employee wages, benefits, and/or payroll taxes</span>
           </div>
 
-          <button style="margin-left: 366px;" id="submit" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
+
+          <button style="margin-left: 370px; margin-bottom: 10px;" id="submit" class="submit" onclick="openPage('results', this, 'rgb(163, 163, 163)')">See Results</button>
         </div>
       </div>
   </div>
@@ -173,12 +159,12 @@
           <br>
           <br>
           <div class="profit-btn" id="profit-btn">
-            <button onclick=" return priceGenerator(-.05)">-5%</button>
-            <button onclick=" return priceGenerator(.05)">5%</button>
-            <button onclick=" return priceGenerator(.1)">10%</button>
-            <button onclick=" return priceGenerator(.15)">15%</button>
-            <button onclick=" return priceGenerator(.20)">20%</button>
-            <!-- <input type="text" onclick="return priceGenerator(this)" placeholder="(.00 format)"> -->
+            <button onclick=" return priceGenerator(00)" class="profit-btn-child active2">0%</button>
+            <button onclick=" return priceGenerator(.05)" class="profit-btn-child">5%</button>
+            <button onclick=" return priceGenerator(.1)" class="profit-btn-child">10%</button>
+            <button onclick=" return priceGenerator(.15)" class="profit-btn-child">15%</button>
+            <button onclick=" return priceGenerator(.20)" class="profit-btn-child">20%</button>
+            <input type="number" id="profit-btn-input" placeholder="%" class="inputBtn">
           </div>
 
           <br>
@@ -187,279 +173,254 @@
           <br>
           <br>
           <div class="price-btn" id="price-btn">
-            <button onclick=" return marginGenerator(-.05)">-5%</button>
-            <button onclick=" return marginGenerator(.05)">5%</button>
-            <button onclick=" return marginGenerator(.1)">10%</button>
-            <button onclick=" return marginGenerator(.15)">15%</button>
-            <button onclick=" return marginGenerator(.20)">20%</button>
-            <!-- <input type="number" onclick="return priceGenerator(this)" placeholder="(.00 format)"> -->
+            <button onclick=" return marginGenerator(00)" class="price-btn-child active">Current</button>
+            <button onclick=" return marginGenerator(.05)" class="price-btn-child">5%</button>
+            <button onclick=" return marginGenerator(.1)" class="price-btn-child">10%</button>
+            <button onclick=" return marginGenerator(.15)" class="price-btn-child">15%</button>
+            <button onclick=" return marginGenerator(.20)" class="price-btn-child">20%</button>
+            <input type="number" id="mgn-btn-input" placeholder="%" class="inputBtn">
+
           </div>
           <br>
           <p style="margin-top: 20px; color: rgba(19,119,250,1);" id="percent-change-unit">Estimated units sold next month: </p>
           <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="price-output">Price at selected profit margin:</p>
-          <p style="margin-top: 25px; color: rgba(19,119,250,1);">New price at adjusted unit projection: </p>
           <p style="margin-top: 25px; color: rgba(19,119,250,1);" id="percent-change-price">New price at adjusted unit projection: </p>
 
         </div>
 
         <div class="column chart">
-          <div style="margin-right: 20px;" id="chart"></div>
+          <div style="margin-right: 20px; margin-top: 50px;" id="chart"></div>
         </div>
       </div>
     </div>
 </div>
 
-  <script>
-  function openPage(pageName,elmnt,color) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].style.backgroundColor = "";
-    }
-    document.getElementById(pageName).style.display = "block";
-    elmnt.style.backgroundColor = color;
+<script>
+  var fixedMonthly, labor, covidCost, nextMonth, material, lastMonth, lastYear, nextMonth, globalBkPrice, chart;
+  var blueDummy =  [0, 1.63, 1.28, .86, .75, 2.13];
+  var greenDummy = [0, .57, .23, 1.02, 1.15, .11];
+  var globalProfitMargin = 0 ;
+  var moneyIcon = '$';
+  var catNames = ['Burger(Beef)', 'sandwich', 'French Fries', 'Beverage', 'Hot Dog', 'Other'];
+
+  function openPage(pageName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
   }
+  
+  //add remove class on result page
+      var btnContainer = document.getElementById("price-btn");
+      var btns = btnContainer.getElementsByClassName("price-btn-child");
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+      var btnContainer2 = document.getElementById("profit-btn");
+      var btns2 = btnContainer2.getElementsByClassName("profit-btn-child");
+      function addRemoveClassOnResults() {
 
-document.getElementById("update").addEventListener("click", function(){
-  var material = document.getElementById("materialcost").value;
-  var lastMonth = document.getElementById("lastmonth").value;
-  var lastYear = document.getElementById("lastmonth-lastyear").value;
-  var nextMonth = document.getElementById("nextmonth-lastyear").value;
+      // Loop through the buttons and add the active class to the current/clicked button
+      for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("active");
+              current[0].className = current[0].className.replace(" active", "");
+              this.className += " active";
+//                document.getElementById("mgn-btn-input").classList.remove("active");
+          });
+      }
 
-  var percentChange = (lastMonth - lastYear)/lastYear;
-  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
-
-  if(percentChange < 0){
-    document.getElementById("change").innerHTML = 
-    (Math.round((percentChange * 100), 2) + "%").fontcolor("red");
-    document.getElementById("unit_estimate").innerHTML = estimateNextMonth + " units.";
-  }
-  else{
-    document.getElementById("change").innerHTML = 
-    (Math.round((percentChange * 100), 2) + "%").fontcolor("green");
-    document.getElementById("unit_estimate").innerHTML = estimateNextMonth + " units.";
-    }
-
-});
-
-document.getElementById("submit").addEventListener("click", function(){
-  var fixedMonthly = document.getElementById("fixed-monthly").value;
-  var labor = document.getElementById("labor").value;
-  var covidCost = document.getElementById("covid-cost").value;
-  var nextMonth = document.getElementById("nextmonth-lastyear").value;
-  var material = document.getElementById("materialcost").value;
-  var material = document.getElementById("materialcost").value;
-  var lastMonth = document.getElementById("lastmonth").value;
-  var lastYear = document.getElementById("lastmonth-lastyear").value;
-  var nextMonth = document.getElementById("nextmonth-lastyear").value;
-
-  var percentChange = (lastMonth - lastYear)/lastYear;
-  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
-
-
-  var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
-  var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
-
-  document.getElementById("breakeven").innerHTML = "Your break-even price: $"+ breakEven.toFixed(2);
-  document.getElementById("percent-change-unit").innerHTML ="Estimated units sold next month: " + estimateNextMonth;
-
-});
-
-function priceGenerator(x){
-  var fixedMonthly = document.getElementById("fixed-monthly").value;
-  var labor = document.getElementById("labor").value;
-  var covidCost = document.getElementById("covid-cost").value;
-  var nextMonth = document.getElementById("nextmonth-lastyear").value;
-  var material = document.getElementById("materialcost").value;
-  var material = document.getElementById("materialcost").value;
-  var lastMonth = document.getElementById("lastmonth").value;
-  var lastYear = document.getElementById("lastmonth-lastyear").value;
-  var nextMonth = document.getElementById("nextmonth-lastyear").value;
-
-  var percentChange = (lastMonth - lastYear)/lastYear;
-  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
-
-
-  var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
-  var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
-
-  document.getElementById("price-output").innerHTML = "Price at selected profit margin: $" + ((x * breakEven) + breakEven).toFixed(2);
-
-}
-
-function marginGenerator(y){
-  var fixedMonthly = document.getElementById("fixed-monthly").value;
-  var labor = document.getElementById("labor").value;
-  var covidCost = document.getElementById("covid-cost").value;
-  var nextMonth = document.getElementById("nextmonth-lastyear").value;
-  var material = document.getElementById("materialcost").value;
-  var material = document.getElementById("materialcost").value;
-  var lastMonth = document.getElementById("lastmonth").value;
-  var lastYear = document.getElementById("lastmonth-lastyear").value;
-  var nextMonth = document.getElementById("nextmonth-lastyear").value;
-
-  var percentChange = (lastMonth - lastYear)/lastYear;
-  var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
-
-  var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
-
-  var newEstimate = Math.floor(estimateNextMonth * y) + parseFloat(estimateNextMonth);
-  var breakEven = ((cost * 1.00) / (newEstimate * 1.00)) + (material * 1.00);
-
-  document.getElementById("percent-change-price").innerHTML = "New price at adjusted unit projection: " + "(" + newEstimate + " units) $" + breakEven.toFixed(2);
-}
-
-// function dataBuilder{
-//   var fixedMonthly = document.getElementById("fixed-monthly").value;
-//   var labor = document.getElementById("labor").value;
-//   var covidCost = document.getElementById("covid-cost").value;
-//   var nextMonth = document.getElementById("nextmonth-lastyear").value;
-//   var material = document.getElementById("materialcost").value;
-//   var material = document.getElementById("materialcost").value;
-//   var lastMonth = document.getElementById("lastmonth").value;
-//   var lastYear = document.getElementById("lastmonth-lastyear").value;
-//   var nextMonth = document.getElementById("nextmonth-lastyear").value;
-
-//   var percentChange = (lastMonth - lastYear)/lastYear;
-//   var estimateNextMonth =  Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
-
-
-//   var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost* 1.00);
-//   var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
-
-//   var breakEvenArray = [];
-//   var count = 0;
-//   for(i = -5; i > 5; i++){
-//     breakEven + 1
-//   }
-// }
-
-var options = {
-          series: [{
-          name: 'Cash Flow',
-          data: [1.45, 5.42, 5.9, -0.42, -12.6, -18.1, -18.2, -14.16, -11.1, -6.09, 0.34, 3.88, 13.07,
-            5.8, 2, 7.37, 8.1, 13.57, 15.75, 17.1, 19.8, -27.03, -54.4, -47.2, -43.3, -18.6, -
-            48.6, -41.1, -39.6, -37.6, -29.4, -21.4, -2.4
-          ]
-        }],
-          chart: {
-          type: 'bar',
-          height: 350
-        },
-        plotOptions: {
-          bar: {
-            colors: {
-              ranges: [{
-                from: -100,
-                to: -46,
-                color: '#F15B46'
-              }, {
-                from: -45,
-                to: 0,
-                color: '#FEB019'
-              }]
-            },
-            columnWidth: '80%',
-          }
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        yaxis: {
-          title: {
-            text: 'Growth',
-          },
-          labels: {
-            formatter: function (y) {
-              return y.toFixed(0) + "%";
-            }
-          }
-        },
-        xaxis: {
-          type: 'normal',
-          categories: [ "burger (beef)"
-          ],
-          labels: {
-            rotate: -90
-          }
-        }
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-
-// var options = {
-//   colors:[
-//    // loss
-//     '#cc0000',
-//   // break-even
-//    '#3366ff',
-//   // profit
-//   '#00cc00'],
-//           series: [{
-//           name: 'Loss',
-//           // data: [44, 55, 41, 67, 22]
-//         }, {
-//           name: 'Break Even',
-//           // data: [1, 1, 1, 1, 1]
-//         }, {
-//           name: 'Profit',
-//           // data: [11, 17, 15, 15, 21]
+      // Loop through the buttons and add the active class to the current/clicked button
+      for (var i = 0; i < btns2.length; i++) {
+          btns2[i].addEventListener("click", function() {
+              var current2 = document.getElementsByClassName("active2");
+              current2[0].className = current2[0].className.replace(" active2", "");
+              this.className += " active2";
+//                document.getElementById("profit-btn-input").classList.remove("active");
+          });
+      }
           
-//         }],
+  }
+
+  document.getElementById("update").addEventListener("click", function() {
+        material = document.getElementById("materialcost").value;
+        lastMonth = document.getElementById("lastmonth").value;
+        lastYear = document.getElementById("lastmonth-lastyear").value;
+        nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+      var percentChange = (lastMonth - lastYear) / lastYear;
+      var estimateNextMonth = Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+
+      if (percentChange < 0) {
+          document.getElementById("change").innerHTML =
+              (Math.round((percentChange * 100), 2) + "%").fontcolor("red");
+          document.getElementById("unit_estimate").innerHTML = estimateNextMonth + " units.";
+      } else {
+          document.getElementById("change").innerHTML =
+              (Math.round((percentChange * 100), 2) + "%").fontcolor("green");
+          document.getElementById("unit_estimate").innerHTML = estimateNextMonth + " units.";
+      }
+
+  });
+  
+   document.getElementById("profit-btn-input").addEventListener("change", function(e) {
+       var val = document.getElementById("profit-btn-input").value;
+       if (isNaN(val) || val == null || val == "") {
+
+       } else {
+           priceGenerator(val/100);
+       }
+   });
+  document.getElementById("mgn-btn-input").addEventListener("change", function(e) {
+       var val = document.getElementById("mgn-btn-input").value;
+       if (isNaN(val) || val == null || val == "") {
+       } else {
+            marginGenerator(val/100);
+       }
+   });
+  
+  
+  document.getElementById("submit").addEventListener("click", function() {
+        fixedMonthly = document.getElementById("fixed-monthly").value;
+        labor = document.getElementById("labor").value;
+        covidCost = document.getElementById("covid-cost").value;
+        nextMonth = document.getElementById("nextmonth-lastyear").value;
+
+      var percentChange = (lastMonth - lastYear) / lastYear;
+      var estimateNextMonth = Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
 
 
-//           chart: {
-//           type: 'bar',
-//           height: 450,
-//           stacked: true,
-//           stackType: 'normal'
-//         },
-        
-//   responsive: [{
-//     breakpoint: 480,
-//     options: {
-//       legend: {
-//       position: 'bottom',
-//       offsetX: -10,
-//       offsetY: 0
-//       }
-//     }
-//   }],
+      var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost * 1.00);
+      var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
+      breakEven = breakEven.toFixed(2);
+      globalBkPrice = breakEven;
+      globalProfitMargin = globalBkPrice; // on page load default profit margin is zero hence difference should be zero
+      document.getElementById("breakeven").innerHTML = "Your break-even price: $" + breakEven;
+      document.getElementById("percent-change-unit").innerHTML = "Estimated units sold next month: " + estimateNextMonth;
+      initialChartLoad();
+  });
 
-//   yaxis: {
-//     labels: {
-//       formatter: function (value) {
-//       return  "$" + value;
-//         }
-//       },
-//   },
-//   xaxis: {
-//     categories: ['Burger (beef)'],
-//   },
-//   fill: {
-//     opacity: 1
-//   },
-//   legend: {
-//     position: 'right',
-//     offsetX: 0,
-//     offsetY: 50
-//   },
-// };
+  function priceGenerator(x) {
+      var percentChange = (lastMonth - lastYear) / lastYear;
+      var estimateNextMonth = Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+      var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost * 1.00);
+      var breakEven = (cost * 1.00) / (estimateNextMonth * 1.00) + (material * 1.00);
+      var profitMgn = ((x * breakEven) + breakEven).toFixed(2);
+      document.getElementById("price-output").innerHTML = "Price at selected profit margin: $" + profitMgn;
+      var difference = profitMgn - globalBkPrice;
+      globalProfitMargin = profitMgn;
+      if ( difference == 0) {
+          greenDummy[0] = 0;
+      } else {
+          greenDummy[0] = difference.toFixed(2);
+      }
+      blueDummy[0] = globalBkPrice;
+      chart.updateSeries([{
+          data: blueDummy,
+      }, {
+          data: greenDummy,
+      }]);
+  }
 
-//   var chart = new ApexCharts(document.querySelector("#chart"), options);
-//   chart.render();
+  function marginGenerator(y) {
+      var percentChange = (lastMonth - lastYear) / lastYear;
+      var estimateNextMonth = Math.floor(nextMonth * percentChange) + parseFloat(nextMonth);
+      var cost = (labor * 1.00) + (fixedMonthly * 1.00) + (covidCost * 1.00);
+      var newEstimate = Math.floor(estimateNextMonth * y) + parseFloat(estimateNextMonth);
+      var breakEven = ((cost * 1.00) / (newEstimate * 1.00)) + (material * 1.00);
+      breakEven = breakEven.toFixed(2);
+      document.getElementById("percent-change-price").innerHTML = "New price at adjusted unit projection: " + "(" + newEstimate + " units) $" + breakEven;
+      document.getElementById("breakeven").innerHTML = "Your break-even price: $" + breakEven;
+      globalBkPrice = breakEven;
+      var difference = globalProfitMargin - globalBkPrice;
+      if ( difference == 0) {
+          greenDummy[0] = 0;
+      } else {
+          greenDummy[0] = difference.toFixed(2);
+      }
+      blueDummy[0] = globalBkPrice;
+      chart.updateSeries([{
+          data: blueDummy,
+      }, {
+          data: greenDummy,
+      }]);
+  }
+  
+  function initialChartLoad() {
+      //chart options
+      blueDummy[0] = globalBkPrice;
+      var options = {
+          series: [{
+              name: 'Breakeven',
+              data: blueDummy
+          }, {
+              name: 'Profit',
+              data: greenDummy,
+          }],
+          dataLabels: {
+              formatter: function(val) {
+                      return moneyIcon + val 
+              }
+          },
+          chart: {
+              type: 'bar',
+              height: 400,
+              stacked: true,
+          },
+          plotOptions: {
+              bar: {
+                  horizontal: false,
+              },
+          },
+          stroke: {
+              width: 1,
+              colors: ['#fff']
+          },
+          title: {
+              text: 'Break Even Analysis'
+          },
+          xaxis: {
+              categories: catNames,
+              title: {
+                  text: 'Product'
+              },
+          },
+          yaxis: {
+              title: {
+                  text: 'Price'
+              },
+              labels: {
+                  formatter: function(val) {
+                      return moneyIcon + val 
+                  }
+              },
+          },
+          colors: ['rgb(0, 143, 251)', '#00b289'],
+          fill: {
+              opacity: 1,
+          },
+          legend: {
+              show: false,
+          }
+      }
+      chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
+  }
 
+
+  
+  // call functions on page load
+  document.getElementById("defaultOpen").click();
+//    document.getElementById("update").click();
+//    document.getElementById("submit").click();
+  addRemoveClassOnResults();
 </script>
 
-</div>
 </div>
 
       </section>
