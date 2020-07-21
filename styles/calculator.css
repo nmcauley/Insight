@@ -14,11 +14,43 @@ body {
     font-family: Helvetiva Neue, Helvetica, Arial;
 }
 
+
+.next-prev button{
+    text-decoration: none;
+    background-color: #eeeded;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-left: 5px;
+    border: 1px solid silver;
+}
+
+.previous button{
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next button{
+    background-color: #f1f1f1;
+    color: white;
+
+  }
+
+.next-prev button:hover {
+    background-color: rgb(177, 198, 253);
+    color: black;
+    transition: ease-in-out .2s;
+}
+
+.next-prev button:active{
+    background-color: #eeeded;
+}
+
 /* tab 1 */
 /* select inputs
     courtesy of levelup.gitconnected */
 select {
-    width: 150px;
+    width: auto;
     height: 50px;
     font-size: 100%;
     text-align: center;
@@ -40,8 +72,13 @@ select {
 select:hover {
       color: #2261b4;
       background-color: white;
-      border-bottom-color: #DCDCDC;
+      width: auto;
+      /* border-bottom-color: #DCDCDC; */
     }
+
+select:focus{
+    width: auto;
+}
 /* For IE <= 11 */
 select::-ms-expand {
    display: none;
@@ -222,7 +259,9 @@ output{
 
 }
 
-.column.options button:hover{
+.column.options button:hover,
+.column.options button.active,
+.column.options button.active2 {
     background-color: rgba(19,119,250,1);
     color: white;
 }
